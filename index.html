@@ -28,9 +28,7 @@
 		font-family: monospace;
 		text-align: left;
 		vertical-align: baseline;
-		line-height: 0;
-		font-size: 1.2em;
-		letter-spacing: 0.15em;
+		line-height: 1;
 	  }
 	</style>
 
@@ -66,7 +64,7 @@
 	  let count = 0;
 	  setInterval(() => {
 		count = (count + 1) % 4;
-		dots.innerHTML = "&bull;".repeat(count); // yuvarlak noktalar
+		dots.innerText = ".".repeat(count);
 	  }, 500);
 	</script>
 </body>
