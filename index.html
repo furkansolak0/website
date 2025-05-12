@@ -20,6 +20,9 @@
 	<link href="03-comming-soon/css/styles.css" rel="stylesheet">
 	<link href="03-comming-soon/css/responsive.css" rel="stylesheet">
 
+	<!-- Lottie Animasyon Kitaplığı -->
+	<script src="https://unpkg.com/lottie-web@5.12.0/build/player/lottie.min.js"></script>
+
 	<!-- Dots Animation Sabitligi ve Stil -->
 	<style>
 	  #dots {
@@ -46,6 +49,9 @@
 		
 		<div class="display-table">
 			<div class="display-table-cell">
+
+				<!-- Lottie Animasyon Alanı -->
+				<div id="lottie-animation" style="width: 120px; height: 120px; margin: 0 auto 20px auto;"></div>
 				
 				<h1 class="title font-white"><b>Hazırlanıyor&nbsp;<span id="dots"></span></b></h1>
 				<p class="desc font-white">Web sitemiz şu anda planlı bir bakım sürecindedir.
@@ -67,6 +73,7 @@
 	</div>
 
 	<script>
+	  // Nokta Animasyonu
 	  const dots = document.getElementById("dots");
 	  let count = 0;
 	  const dotChar = "•"; // yuvarlak nokta karakteri
@@ -74,6 +81,15 @@
 		count = (count + 1) % 4;
 		dots.innerText = dotChar.repeat(count);
 	  }, 500);
+
+	  // Lottie Animasyonu
+	  lottie.loadAnimation({
+		container: document.getElementById('lottie-animation'),
+		renderer: 'svg',
+		loop: true,
+		autoplay: true,
+		path: 'paperplane.json' // JSON dosyanı bu isimle index.html ile aynı klasöre koy
+	  });
 	</script>
 </body>
 </html>
