@@ -5,24 +5,34 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
-	
+
 	<!-- Yönlendirme Scripti -->
 	<script>
 	  if (window.location.hostname === 'www.ofsenterprise.com') {
 		window.location.href = 'https://ofsenterprise.com';
 	  }
 	</script>
-	
+
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CPoppins:400,500" rel="stylesheet">
 	<link href="common-css/ionicons.css" rel="stylesheet">
 	<link rel="stylesheet" href="common-css/jquery.classycountdown.css" />
 	<link href="03-comming-soon/css/styles.css" rel="stylesheet">
 	<link href="03-comming-soon/css/responsive.css" rel="stylesheet">
-	
+
+	<!-- Dots Animation Sabitligi Icin Stil -->
+	<style>
+	  #dots {
+		display: inline-block;
+		width: 1.5em;
+		font-family: monospace;
+		text-align: left;
+	  }
+	</style>
+
 </head>
 <body>
-	
+
 	<div class="main-area center-text" style="background-image:url(images/countdown-3-1600x900.jpg);">
 		
 		<div class="display-table">
@@ -36,7 +46,6 @@
 <a href="mailto:furkan@ofsenterprise.com" style="color: white;">furkan@ofsenterprise.com</a>
 </p>
 
-				
 				<ul class="social-btn font-white">
 					<li><a href="#"></a></li>
 					<li><a href="#"></a></li>
@@ -47,15 +56,14 @@
 			</div>
 		</div>
 	</div>
+
 	<script>
-  const dots = document.getElementById("dots");
-  let count = 0;
-  setInterval(() => {
-    count = (count + 1) % 4;
-    dots.innerText = ".".repeat(count);
-  }, 500);
-</script>
+	  const dots = document.getElementById("dots");
+	  let count = 0;
+	  setInterval(() => {
+		count = (count + 1) % 4;
+		dots.innerText = ".".repeat(count);
+	  }, 500);
+	</script>
 </body>
 </html>
-
-
