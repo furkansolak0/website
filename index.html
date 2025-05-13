@@ -16,8 +16,8 @@
     }
 
     #lottie-404 {
-      width: 360px;
-      height: 360px;
+      width: 420px;
+      height: 420px;
       margin: 0 auto 30px auto;
     }
 
@@ -40,6 +40,13 @@
     a.btn:hover {
       background-color: #007ca6;
     }
+
+    #email-anim {
+      width: 80px;
+      height: 80px;
+      margin: 20px auto;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -51,13 +58,30 @@
 
   <a href="/" class="btn">Ana Sayfaya Dön</a>
 
+  <!-- E-posta animasyonu -->
+  <div id="email-anim"></div>
+
   <script>
     lottie.loadAnimation({
       container: document.getElementById('lottie-404'),
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      path: 'paperplane-404.json' // 🔁 GÜNCELLENEN DOSYA ADI
+      path: 'paperplane-404.json'
+    });
+
+    // E-posta animasyonu
+    const emailAnim = lottie.loadAnimation({
+      container: document.getElementById('email-anim'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'send.json' // mail buton animasyonu
+    });
+
+    // Tıklanınca mail istemcisi açılır
+    document.getElementById('email-anim').addEventListener('click', function () {
+      window.location.href = "mailto:furkan@ofsenterprise.com";
     });
   </script>
 
