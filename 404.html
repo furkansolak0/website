@@ -1,23 +1,66 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Sayfa Bulunamadı</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background: #1a1a1a;
+      background-color: #1a1a1a;
       color: white;
-      font-family: sans-serif;
+      font-family: 'Poppins', sans-serif;
       text-align: center;
-      padding-top: 100px;
+      margin: 0;
+      padding: 60px 20px;
     }
-    a {
-      color: #00c4ff;
+
+    #lottie-404 {
+      width: 240px;
+      height: 240px;
+      margin: 0 auto 30px auto;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    a.btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #00c4ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    a.btn:hover {
+      background-color: #00a4d6;
     }
   </style>
 </head>
 <body>
+
+  <div id="lottie-404"></div>
   <h1>404 - Sayfa Bulunamadı</h1>
-  <p>Aradığınız sayfa mevcut değil. <a href="/">Ana sayfaya dön</a></p>
+  <p>Kağıt uçağımız bu sayfayı bulamadı. Belki de rotadan saptı 🚫✈️</p>
+  <a href="/" class="btn">Ana Sayfaya Dön</a>
+
+  <script src="https://unpkg.com/lottie-web@5.12.0/build/player/lottie.min.js"></script>
+  <script>
+    lottie.loadAnimation({
+      container: document.getElementById('lottie-404'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'paperplane-404.json' // JSON dosyanın adını bu şekilde kullanacağız
+    });
+  </script>
 </body>
 </html>
