@@ -1,83 +1,89 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="tr">
 <head>
-	<title>OFS Enterprise</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <title>404 - Sayfa Bulunamadı</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/lottie-web@5.12.0/build/player/lottie.min.js"></script>
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #111111;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+      margin: 0;
+    }
 
-	<!-- Yönlendirme Scripti -->
-	<script>
-	  if (window.location.hostname === 'www.ofsenterprise.com') {
-		window.location.href = 'https://ofsenterprise.com';
-	  }
-	</script>
+    #lottie-404 {
+      width: 420px;
+      height: 420px;
+      margin: 0 auto 30px auto;
+    }
 
-	<!-- Font -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CPoppins:400,500" rel="stylesheet">
-	<link href="common-css/ionicons.css" rel="stylesheet">
-	<link rel="stylesheet" href="common-css/jquery.classycountdown.css" />
-	<link href="03-comming-soon/css/styles.css" rel="stylesheet">
-	<link href="03-comming-soon/css/responsive.css" rel="stylesheet">
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
 
-	<!-- Lottie Animasyon Kitaplığı -->
-	<script src="https://unpkg.com/lottie-web@5.12.0/build/player/lottie.min.js"></script>
+    a.btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #00a4d6;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
 
-	<style>
-	  h1.title {
-		margin-bottom: 30px;
-	  }
-	  .centered-content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		transform: translateY(0);
-	  }
-	  #lottie-animation {
-		margin-top: 40px;
-		margin-bottom: 20px;
-	  }
-	</style>
+    a.btn:hover {
+      background-color: #007ca6;
+    }
 
+    #email-anim {
+      width: 80px;
+      height: 80px;
+      margin: 20px auto;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
-	<div class="main-area center-text" style="background-image:url(images/countdown-3-1600x900.jpg);">
-		<div class="display-table">
-			<div class="display-table-cell centered-content">
+  <!-- Lottie Animasyon Alanı -->
+  <div id="lottie-404"></div>
 
-				<!-- Lottie Animasyon Alanı -->
-				<div id="lottie-animation" style="width: 220px; height: 220px;"></div>
-				
-				<h1 class="title font-white"><b>Hazırlanıyoruz...</b></h1>
-				<p class="desc font-white" style="max-width: 700px; margin: 0 auto 20px auto;">Web sitemiz şu anda planlı bir bakım sürecindedir.
-					 Kısa süre içinde yeniden yayında olacağız. Sabrınız için teşekkür ederiz.</p>
-				
-				<p style="font-size: 18px; font-weight: bold; margin-top: 20px;">
-					<a href="mailto:furkan@ofsenterprise.com" style="color: white;">furkan@ofsenterprise.com</a>
-				</p>
+  <h1>Sayfa Bulunamadı</h1>
 
-				<ul class="social-btn font-white" style="margin-top: 30px;">
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
-				</ul>
+  <a href="/" class="btn">Ana Sayfaya Dön</a>
 
-			</div>
-		</div>
-	</div>
+  <!-- E-posta animasyonu -->
+  <div id="email-anim"></div>
 
-	<script>
-	  // Lottie Animasyonu
-	  lottie.loadAnimation({
-		container: document.getElementById('lottie-animation'),
-		renderer: 'svg',
-		loop: true,
-		autoplay: true,
-		path: 'paperplane.json'
-	  });
-	</script>
+  <script>
+    lottie.loadAnimation({
+      container: document.getElementById('lottie-404'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'paperplane-404.json'
+    });
+
+    // E-posta animasyonu
+    const emailAnim = lottie.loadAnimation({
+      container: document.getElementById('email-anim'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'send.json' // mail buton animasyonu
+    });
+
+    // Tıklanınca mail istemcisi açılır
+    document.getElementById('email-anim').addEventListener('click', function () {
+      window.location.href = "mailto:furkan@ofsenterprise.com";
+    });
+  </script>
+
 </body>
 </html>
