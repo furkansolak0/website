@@ -3,7 +3,7 @@
 <head>
 	<title>OFS Enterprise</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 
 	<!-- Yönlendirme Scripti -->
@@ -32,12 +32,12 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		transform: translateY(0); /* Yukarı taşıma kaldırıldı */
-		transform: translateY(0);
+		transform: translateY(-60px); /* sadece yazıları yukarı taşıyoruz */
 	  }
 	  #lottie-animation {
-		margin-top: 40px;
-		margin-bottom: 20px;
+		width: 220px;
+		height: 220px;
+		margin: 0 auto 20px auto;
 	  }
 	</style>
 
@@ -49,12 +49,12 @@
 			<div class="display-table-cell centered-content">
 
 				<!-- Lottie Animasyon Alanı -->
-				<div id="lottie-animation" style="width: 220px; height: 220px; margin: 0 auto 20px auto;"></div>
-				<div id="lottie-animation" style="width: 220px; height: 220px;"></div>
+				<div id="lottie-animation"></div>
 
 				<h1 class="title font-white"><b>Hazırlanıyoruz...</b></h1>
-				<p class="desc font-white" style="max-width: 700px; margin: 0 auto 20px auto;">Web sitemiz şu anda planlı bir bakım sürecindedir.
-					 Kısa süre içinde yeniden yayında olacağız. Sabrınız için teşekkür ederiz.</p>
+				<p class="desc font-white" style="max-width: 700px; margin: 0 auto 20px auto;">
+					Web sitemiz şu anda planlı bir bakım sürecindedir. Kısa süre içinde yeniden yayında olacağız. Sabrınız için teşekkür ederiz.
+				</p>
 
 				<p style="font-size: 18px; font-weight: bold; margin-top: 20px;">
 					<a href="mailto:furkan@ofsenterprise.com" style="color: white;">furkan@ofsenterprise.com</a>
@@ -72,7 +72,6 @@
 	</div>
 
 	<script>
-	  // Lottie Animasyonu
 	  lottie.loadAnimation({
 		container: document.getElementById('lottie-animation'),
 		renderer: 'svg',
