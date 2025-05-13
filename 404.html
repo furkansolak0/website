@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>404 - Sayfa Bulunamadı</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/lottie-web@5.12.0/build/player/lottie.min.js"></script>
   <style>
     body {
       background-color: #ffffff;
@@ -14,14 +15,10 @@
       margin: 0;
     }
 
-    .image-container {
-      max-width: 500px; /* BÜYÜTÜLDÜ */
+    #lottie-404 {
+      width: 260px;
+      height: 260px;
       margin: 0 auto 30px auto;
-    }
-
-    .image-container img {
-      width: 100%;
-      height: auto;
     }
 
     h1 {
@@ -47,8 +44,22 @@
 </head>
 <body>
 
+  <!-- Lottie Animasyon Alanı -->
+  <div id="lottie-404"></div>
+
   <h1>Sayfa Bulunamadı</h1>
+
   <a href="/" class="btn">Ana Sayfaya Dön</a>
+
+  <script>
+    lottie.loadAnimation({
+      container: document.getElementById('lottie-404'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'paperplane-404.json' // 🔁 GÜNCELLENEN DOSYA ADI
+    });
+  </script>
 
 </body>
 </html>
