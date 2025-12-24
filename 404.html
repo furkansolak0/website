@@ -1,65 +1,56 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>404 - Sayfa Bulunamadı</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://unpkg.com/lottie-web@5.12.0/build/player/lottie.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yönlendiriliyor…</title>
   <style>
-    body {
-      background-color: #ffffff;
-      color: #111111;
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      padding: 60px 20px;
-      margin: 0;
-    }
-
-    #lottie-404 {
-      width: 360px;
-      height: 360px;
-      margin: 0 auto 30px auto;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    a.btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
-      background-color: #00a4d6;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    a.btn:hover {
-      background-color: #007ca6;
-    }
+    body { font-family: Arial, sans-serif; padding: 24px; }
+    .muted { color: #666; }
   </style>
 </head>
 <body>
-
-  <!-- Lottie Animasyon Alanı -->
-  <div id="lottie-404"></div>
-
-  <h1>Sayfa Bulunamadı</h1>
-
-  <a href="/" class="btn">Ana Sayfaya Dön</a>
+  <h3>Yönlendiriliyor…</h3>
+  <p class="muted">Lütfen bekleyin.</p>
 
   <script>
-    lottie.loadAnimation({
-      container: document.getElementById('lottie-404'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: 'paperplane-404.json' // 🔁 GÜNCELLENEN DOSYA ADI
-    });
-  </script>
+    (function () {
+      // ✅ Senin Supabase projen
+      var SUPABASE_URL = "https://pdcrdlnraaiqvrpewiyz.supabase.co";
 
+      // ✅ Uygulamanın deep link’i
+      var APP_DEEPLINK = "promptio://login-callback";
+
+      var path = window.location.pathname || "/";
+      var search = window.location.search || "";
+      var hash = window.location.hash || "";
+
+      // 1) Supabase verify linki buraya gelirse:
+      //    https://ofsenterprise.com/auth/v1/verify?token=...&type=signup
+      // -> bunu gerçek Supabase verify endpointine taşı
+      if (path.indexOf("/auth/v1/") === 0) {
+        var target = SUPABASE_URL + path + search;
+
+        // redirect_to ekle (yoksa ekle, varsa ezme)
+        if (target.indexOf("redirect_to=") === -1) {
+          target += (target.indexOf("?") === -1 ? "?" : "&") + "redirect_to=" + encodeURIComponent(APP_DEEPLINK);
+        }
+
+        window.location.replace(target);
+        return;
+      }
+
+      // 2) Bazı akışlarda token hash ile gelebiliyor (örn: #access_token=...)
+      // -> direkt app’e gönder
+      if (hash && hash.indexOf("access_token=") !== -1) {
+        var appUrl = APP_DEEPLINK + (hash.startsWith("#") ? ("?" + hash.substring(1)) : ("?" + hash));
+        window.location.replace(appUrl);
+        return;
+      }
+
+      // 3) Diğer 404’lerde ana sayfaya dön
+      window.location.replace("https://ofsenterprise.com/");
+    })();
+  </script>
 </body>
 </html>
