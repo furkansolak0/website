@@ -6,11 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 
-	<!-- Yönlendirme Scripti -->
+	<!-- Redirect + Supabase Verify Fix -->
 	<script>
-	  if (window.location.hostname === 'www.ofsenterprise.com') {
-		window.location.href = 'https://ofsenterprise.com';
-	  }
+	  (function () {
+		// 1) www -> apex (path'i kaybetmeden)
+		if (window.location.hostname === 'www.ofsenterprise.com') {
+		  window.location.replace('https://ofsenterprise.com' + window.location.pathname + window.location.search + window.location.hash);
+		  return;
+		}
+
+		// 2) Supabase email confirm linki /auth/v1/... ile gelirse yakala
+		var SUPABASE_URL = "https://pdcrdlnraaiqvrpewiyz.supabase.co";
+		var APP_DEEPLINK = "promptio://login-callback";
+
+		var path = window.location.pathname || "/";
+		var search = window.location.search || "";
+		var hash = window.location.hash || "";
+
+		// Supabase verify linki
+		if (path.indexOf("/auth/v1/") === 0) {
+		  var target = SUPABASE_URL + path + search;
+
+		  // redirect_to ekle (yoksa ekle, varsa dokunma)
+		  if (target.indexOf("redirect_to=") === -1) {
+			target += (target.indexOf("?") === -1 ? "?" : "&") + "redirect_to=" + encodeURIComponent(APP_DEEPLINK);
+		  }
+
+		  window.location.replace(target);
+		  return;
+		}
+
+		// Bazı akışlarda token hash ile gelir: #access_token=...
+		if (hash && hash.indexOf("access_token=") !== -1) {
+		  var appUrl = APP_DEEPLINK + (hash.startsWith("#") ? ("?" + hash.substring(1)) : ("?" + hash));
+		  window.location.replace(appUrl);
+		  return;
+		}
+	  })();
 	</script>
 
 	<!-- Font -->
@@ -32,7 +64,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		transform: translateY(40px); /* Yazı biraz yukarı taşındı */
+		transform: translateY(40px);
 	  }
 	</style>
 
@@ -45,11 +77,11 @@
 
 				<!-- Lottie Animasyon Alanı -->
 				<div id="lottie-animation" style="width: 220px; height: 220px; margin: 0 auto 20px auto;"></div>
-				
+
 				<h1 class="title font-white"><b>Hazırlanıyoruz...</b></h1>
 				<p class="desc font-white" style="max-width: 700px; margin: 0 auto 20px auto;">Web sitemiz şu anda planlı bir bakım sürecindedir.
 					 Kısa süre içinde yeniden yayında olacağız. Sabrınız için teşekkür ederiz.</p>
-				
+
 				<p style="font-size: 18px; font-weight: bold; margin-top: 20px;">
 					<a href="mailto:furkan@ofsenterprise.com" style="color: white;">furkan@ofsenterprise.com</a>
 				</p>
