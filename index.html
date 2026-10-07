@@ -1,111 +1,557 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>OFS Enterprise</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>OFS — Prolig: league management & live streaming for amateur football</title>
+	<meta name="description" content="Prolig is an all-in-one platform for amateur 7-a-side football leagues: league management, live scoring and YouTube Live streaming with real-time overlays.">
 
-	<!-- Redirect + Supabase Verify Fix -->
+	<!-- www -> apex (path'i kaybetmeden) -->
 	<script>
-	  (function () {
-		// 1) www -> apex (path'i kaybetmeden)
-		if (window.location.hostname === 'www.ofsenterprise.com') {
-		  window.location.replace('https://ofsenterprise.com' + window.location.pathname + window.location.search + window.location.hash);
-		  return;
-		}
-
-		// 2) Supabase email confirm linki /auth/v1/... ile gelirse yakala
-		var SUPABASE_URL = "https://pdcrdlnraaiqvrpewiyz.supabase.co";
-		var APP_DEEPLINK = "promptio://login-callback";
-
-		var path = window.location.pathname || "/";
-		var search = window.location.search || "";
-		var hash = window.location.hash || "";
-
-		// Supabase verify linki
-		if (path.indexOf("/auth/v1/") === 0) {
-		  var target = SUPABASE_URL + path + search;
-
-		  // redirect_to ekle (yoksa ekle, varsa dokunma)
-		  if (target.indexOf("redirect_to=") === -1) {
-			target += (target.indexOf("?") === -1 ? "?" : "&") + "redirect_to=" + encodeURIComponent(APP_DEEPLINK);
-		  }
-
-		  window.location.replace(target);
-		  return;
-		}
-
-		// Bazı akışlarda token hash ile gelir: #access_token=...
-		if (hash && hash.indexOf("access_token=") !== -1) {
-		  var appUrl = APP_DEEPLINK + (hash.startsWith("#") ? ("?" + hash.substring(1)) : ("?" + hash));
-		  window.location.replace(appUrl);
-		  return;
-		}
-	  })();
+	  if (window.location.hostname === 'www.ofsenterprise.com') {
+		window.location.replace('https://ofsenterprise.com' + window.location.pathname + window.location.search + window.location.hash);
+	  }
 	</script>
 
-	<!-- Font -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CPoppins:400,500" rel="stylesheet">
-	<link href="common-css/ionicons.css" rel="stylesheet">
-	<link rel="stylesheet" href="common-css/jquery.classycountdown.css" />
-	<link href="03-comming-soon/css/styles.css" rel="stylesheet">
-	<link href="03-comming-soon/css/responsive.css" rel="stylesheet">
-
-	<!-- Lottie Animasyon Kitaplığı -->
-	<script src="https://unpkg.com/lottie-web@5.12.0/build/player/lottie.min.js"></script>
+	<meta property="og:title" content="Prolig — league management & live streaming for amateur football">
+	<meta property="og:description" content="Stream matches to YouTube Live and log goals, cards and substitutions mid-stream — the league table updates in real time.">
+	<meta property="og:url" content="https://ofsenterprise.com/">
+	<meta property="og:type" content="website">
+	<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307110c'/%3E%3Ccircle cx='32' cy='32' r='15' fill='none' stroke='%23d8ff3e' stroke-width='6'/%3E%3C/svg%3E">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Instrument+Sans:wght@400;500;600&family=Azeret+Mono:wght@500;700&display=swap" rel="stylesheet">
 
 	<style>
-	  h1.title {
-		margin-bottom: 30px;
+	  :root {
+		--night: #07110c;
+		--pitch: #0d2a1b;
+		--pitch-2: #123823;
+		--chalk: #eef3ea;
+		--chalk-dim: #a9b8ad;
+		--line: rgba(238, 243, 234, 0.14);
+		--flood: #d8ff3e;
+		--live: #ff3b30;
+		--display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+		--body: "Instrument Sans", "Helvetica Neue", sans-serif;
+		--mono: "Azeret Mono", ui-monospace, monospace;
 	  }
-	  .centered-content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		transform: translateY(40px);
+	  * { box-sizing: border-box; margin: 0; padding: 0; }
+	  html { scroll-behavior: smooth; }
+	  body {
+		background: var(--night);
+		color: var(--chalk);
+		font-family: var(--body);
+		font-size: 17px;
+		line-height: 1.6;
+		-webkit-font-smoothing: antialiased;
+		overflow-x: hidden;
+	  }
+	  a { color: inherit; }
+	  .wrap { width: min(1160px, 100% - 32px); margin-inline: auto; }
+
+	  /* grain */
+	  body::after {
+		content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 50; opacity: .07;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	  }
+
+	  /* nav */
+	  nav { position: absolute; top: 0; left: 0; right: 0; z-index: 10; }
+	  nav .wrap { display: flex; align-items: center; justify-content: space-between; padding: 26px 0; }
+	  .brand { font-family: var(--display); font-weight: 900; font-size: 26px; letter-spacing: .04em; text-decoration: none; }
+	  .brand span { color: var(--flood); }
+	  nav ul { display: flex; gap: 28px; list-style: none; font-size: 15px; }
+	  nav ul a { text-decoration: none; color: var(--chalk-dim); transition: color .2s; }
+	  nav ul a:hover { color: var(--chalk); }
+
+	  /* hero */
+	  .hero {
+		position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden;
+		background:
+		  radial-gradient(ellipse 60% 50% at 85% -5%, rgba(216,255,62,.20), transparent 60%),
+		  radial-gradient(ellipse 50% 45% at 5% -10%, rgba(238,243,234,.12), transparent 60%),
+		  repeating-linear-gradient(90deg, var(--pitch) 0 9%, var(--pitch-2) 9% 18%);
+	  }
+	  .hero::before { /* pitch markings */
+		content: ""; position: absolute; inset: 0; pointer-events: none;
+		background:
+		  radial-gradient(circle at 50% 118%, transparent 0 21%, var(--line) 21% calc(21% + 2px), transparent calc(21% + 2px)),
+		  linear-gradient(var(--line), var(--line)) 0 calc(100% - 2px) / 100% 2px no-repeat;
+	  }
+	  .hero::after {
+		content: ""; position: absolute; inset: 0; pointer-events: none;
+		background: linear-gradient(180deg, rgba(7,17,12,.15) 0%, rgba(7,17,12,.55) 70%, var(--night) 100%);
+	  }
+	  .hero .wrap { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; padding: 140px 0 100px; }
+	  .status {
+		display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 12px;
+		letter-spacing: .12em; text-transform: uppercase; border: 1px solid var(--line); padding: 8px 14px; border-radius: 999px;
+		background: rgba(7,17,12,.5); backdrop-filter: blur(6px);
+	  }
+	  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 0 rgba(255,59,48,.6); animation: pulse 1.8s infinite; }
+	  @keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(255,59,48,0); } 100% { box-shadow: 0 0 0 0 rgba(255,59,48,0); } }
+	  h1 {
+		font-family: var(--display); font-weight: 900; text-transform: uppercase;
+		font-size: clamp(54px, 8.4vw, 118px); line-height: .88; letter-spacing: -.01em; margin: 26px 0 26px;
+	  }
+	  h1 em { font-style: normal; color: var(--flood); }
+	  .lede { max-width: 540px; color: var(--chalk-dim); font-size: 19px; }
+	  .lede strong { color: var(--chalk); font-weight: 600; }
+	  .cta { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+	  .btn {
+		display: inline-block; padding: 15px 26px; font-weight: 600; font-size: 15px; text-decoration: none;
+		border-radius: 4px; transition: transform .2s, background .2s;
+	  }
+	  .btn-primary { background: var(--flood); color: var(--night); }
+	  .btn-primary:hover { transform: translateY(-2px); }
+	  .btn-ghost { border: 1px solid var(--line); }
+	  .btn-ghost:hover { background: rgba(238,243,234,.06); }
+
+	  /* broadcast frame */
+	  .frame {
+		position: relative; aspect-ratio: 9 / 13; border-radius: 22px; padding: 14px;
+		background: #0b0f0d; border: 1px solid rgba(238,243,234,.12);
+		box-shadow: 0 40px 80px -20px rgba(0,0,0,.7), 0 0 0 6px rgba(238,243,234,.03);
+		transform: rotate(2.5deg);
+	  }
+	  .screen {
+		position: relative; height: 100%; border-radius: 12px; overflow: hidden;
+		background:
+		  radial-gradient(ellipse 80% 40% at 50% 0%, rgba(216,255,62,.18), transparent 70%),
+		  repeating-linear-gradient(0deg, #1a4a2e 0 12%, #1f5434 12% 24%);
+	  }
+	  .screen::before { /* center circle + halfway line, in perspective */
+		content: ""; position: absolute; left: -20%; right: -20%; top: 38%; height: 70%;
+		border-top: 2px solid rgba(255,255,255,.35);
+		background: radial-gradient(ellipse 28% 22% at 50% 0%, transparent 92%, rgba(255,255,255,.35) 93% 96%, transparent 97%);
+		transform: perspective(500px) rotateX(55deg); transform-origin: top;
+	  }
+	  .scorebug {
+		position: absolute; top: 14px; left: 14px; display: flex; align-items: stretch; font-family: var(--mono);
+		font-size: 12px; border-radius: 4px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,.4);
+	  }
+	  .scorebug > div { padding: 7px 10px; display: flex; align-items: center; gap: 8px; }
+	  .sb-team { background: rgba(7,17,12,.92); font-weight: 700; letter-spacing: .06em; }
+	  .sb-score { background: var(--flood); color: var(--night); font-weight: 700; font-size: 14px; }
+	  .sb-time { background: rgba(7,17,12,.92); color: var(--chalk-dim); }
+	  .live-tag {
+		position: absolute; top: 14px; right: 14px; background: var(--live); color: #fff; font-family: var(--mono);
+		font-size: 11px; font-weight: 700; letter-spacing: .1em; padding: 6px 9px; border-radius: 3px; display: flex; gap: 6px; align-items: center;
+	  }
+	  .live-tag i { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: blink 1s steps(2) infinite; }
+	  @keyframes blink { 50% { opacity: 0; } }
+	  .lower-third {
+		position: absolute; left: 14px; right: 14px; bottom: 16px; font-family: var(--mono); font-size: 11px;
+		background: rgba(7,17,12,.9); border-left: 3px solid var(--flood); padding: 10px 12px; border-radius: 3px;
+		animation: slideUp .8s 1.2s both cubic-bezier(.2,.8,.2,1);
+	  }
+	  .lower-third b { display: block; font-family: var(--display); font-size: 20px; letter-spacing: .03em; text-transform: uppercase; }
+	  .lower-third span { color: var(--chalk-dim); }
+	  @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } }
+	  .table-chip {
+		position: absolute; right: -34px; top: 46%; width: 210px; background: var(--chalk); color: var(--night);
+		border-radius: 8px; padding: 14px; font-size: 12px; transform: rotate(-4deg);
+		box-shadow: 0 30px 50px -15px rgba(0,0,0,.6);
+		animation: slideUp .8s 1.6s both cubic-bezier(.2,.8,.2,1);
+	  }
+	  .table-chip h4 { font-family: var(--display); font-size: 16px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+	  .table-chip table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 11px; }
+	  .table-chip td { padding: 4px 0; border-top: 1px solid rgba(7,17,12,.1); }
+	  .table-chip td:last-child { text-align: right; font-weight: 700; }
+	  .table-chip tr.up td { color: #1b7a3c; }
+
+	  /* reveal */
+	  .rise { animation: rise .9s both cubic-bezier(.2,.8,.2,1); }
+	  .d1 { animation-delay: .1s } .d2 { animation-delay: .25s } .d3 { animation-delay: .4s } .d4 { animation-delay: .55s }
+	  @keyframes rise { from { opacity: 0; transform: translateY(24px); } }
+
+	  /* sections */
+	  section { padding: 120px 0; position: relative; }
+	  .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--flood); }
+	  h2 {
+		font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: clamp(40px, 5.6vw, 76px);
+		line-height: .92; margin: 14px 0 22px; max-width: 14ch;
+	  }
+	  .intro { color: var(--chalk-dim); max-width: 620px; font-size: 18px; }
+
+	  /* proof */
+	  .proof { padding-top: 40px; }
+	  .proof-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 56px; align-items: center; }
+	  .player {
+		position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; cursor: pointer;
+		border: 1px solid var(--line); box-shadow: 0 30px 60px -20px rgba(0,0,0,.7); color: var(--chalk); font: inherit; text-align: left;
+		background:
+		  linear-gradient(180deg, rgba(7,17,12,0) 40%, rgba(7,17,12,.9) 100%),
+		  radial-gradient(ellipse 70% 50% at 50% 0%, rgba(216,255,62,.22), transparent 70%),
+		  repeating-linear-gradient(90deg, #1a4a2e 0 8%, #1f5434 8% 16%);
+	  }
+	  .player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+	  .poster-live { position: absolute; top: 16px; left: 16px; display: flex; gap: 8px; align-items: center; background: var(--live); color: #fff; font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 6px 10px; border-radius: 3px; }
+	  .poster-live i { width: 6px; height: 6px; border-radius: 50%; background: #fff; }
+	  .play { position: absolute; left: 50%; top: 44%; width: 78px; height: 78px; margin: -39px 0 0 -39px; border-radius: 50%; background: var(--flood); box-shadow: 0 0 0 10px rgba(216,255,62,.18); transition: transform .25s, box-shadow .25s; }
+	  .play::after { content: ""; position: absolute; left: 31px; top: 24px; border-style: solid; border-width: 15px 0 15px 24px; border-color: transparent transparent transparent var(--night); }
+	  .player:hover .play { transform: scale(1.08); box-shadow: 0 0 0 16px rgba(216,255,62,.14); }
+	  .poster-title { position: absolute; left: 20px; bottom: 40px; font-family: var(--display); font-weight: 900; font-size: clamp(24px, 3vw, 36px); text-transform: uppercase; line-height: 1; }
+	  .poster-title em { font-style: normal; color: var(--flood); }
+	  .poster-sub { position: absolute; left: 20px; bottom: 16px; font-family: var(--mono); font-size: 11px; color: var(--chalk-dim); }
+	  .stats { display: flex; flex-wrap: wrap; gap: 22px 30px; margin: 28px 0 32px; }
+	  .stats b { display: block; font-family: var(--display); font-weight: 900; font-size: 46px; line-height: 1; color: var(--flood); }
+	  .stats span { font-size: 13px; color: var(--chalk-dim); }
+
+	  /* problem strip */
+	  .strip { border-block: 1px solid var(--line); padding: 0; }
+	  .strip .wrap { display: grid; grid-template-columns: repeat(3, 1fr); }
+	  .strip div.cell { padding: 34px 28px; border-left: 1px solid var(--line); }
+	  .strip div.cell:first-child { border-left: 0; padding-left: 0; }
+	  .strip b { font-family: var(--display); font-size: 30px; text-transform: uppercase; display: block; line-height: 1; margin-bottom: 8px; }
+	  .strip p { color: var(--chalk-dim); font-size: 15px; }
+
+	  /* apps */
+	  .apps { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 60px; }
+	  .app {
+		position: relative; padding: 40px 36px 36px; border: 1px solid var(--line); border-radius: 6px;
+		background: linear-gradient(180deg, rgba(238,243,234,.035), transparent 60%);
+		transition: border-color .3s, transform .3s;
+	  }
+	  .app:hover { border-color: rgba(216,255,62,.45); transform: translateY(-4px); }
+	  .app .num { position: absolute; top: 24px; right: 30px; font-family: var(--display); font-weight: 900; font-size: 84px; line-height: 1; color: transparent; -webkit-text-stroke: 1px rgba(238,243,234,.16); }
+	  .app .tag { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--chalk-dim); }
+	  .app h3 { font-family: var(--display); font-weight: 700; font-size: 40px; text-transform: uppercase; line-height: 1; margin: 10px 0 14px; }
+	  .app > p { color: var(--chalk-dim); margin-bottom: 22px; }
+	  .app ul { list-style: none; display: grid; gap: 10px; }
+	  .app li { padding-left: 26px; position: relative; font-size: 15.5px; }
+	  .app li strong { color: var(--chalk); font-weight: 600; }
+	  .app em.hl { font-style: normal; color: var(--flood); }
+	  .app li::before { content: ""; position: absolute; left: 0; top: .62em; width: 12px; height: 2px; background: var(--flood); }
+
+	  /* screens */
+	  .screens { padding-top: 40px; }
+	  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 56px; align-items: start; }
+	  .shots figure:nth-child(even) { margin-top: 48px; }
+	  .shots img { display: block; width: 100%; height: 420px; object-fit: cover; object-position: top; border-radius: 14px; border: 1px solid var(--line); background: #0b0f0d; box-shadow: 0 24px 50px -20px rgba(0,0,0,.7); }
+	  .shots figcaption { margin-top: 14px; font-size: 14.5px; color: var(--chalk-dim); }
+	  .shots figcaption a { color: var(--flood); text-decoration: none; }
+	  .shots figcaption b { display: block; font-family: var(--display); font-size: 22px; text-transform: uppercase; color: var(--chalk); letter-spacing: .02em; margin-bottom: 2px; }
+
+	  /* flow */
+	  .flow-sec { background: var(--chalk); color: var(--night); }
+	  .flow-sec .kicker { color: #2f6b1f; }
+	  .flow-sec .intro { color: #3e4a42; }
+	  .flow { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0 28px; align-items: center; margin-top: 64px; }
+	  .source {
+		grid-row: span 4; border: 2px solid var(--night); padding: 30px; border-radius: 6px; background: #fff;
+	  }
+	  .source .kicker { color: var(--night); opacity: .6; }
+	  .source h3 { font-family: var(--display); font-size: 38px; text-transform: uppercase; line-height: 1; margin: 10px 0; }
+	  .source p { color: #3e4a42; font-size: 15px; }
+	  .wire { grid-row: span 4; width: 60px; height: 100%; position: relative; }
+	  .wire::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2px; background: var(--night); }
+	  .wire::after { content: ""; position: absolute; right: 0; top: 12%; bottom: 12%; width: 2px; background: var(--night); }
+	  .out { display: flex; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid rgba(7,17,12,.15); }
+	  .out:last-child { border-bottom: 0; }
+	  .out b { font-family: var(--display); font-size: 26px; text-transform: uppercase; min-width: 9ch; }
+	  .out span { color: #3e4a42; font-size: 15px; }
+
+	  /* next */
+	  .next-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: start; }
+	  .roadmap { border-left: 2px solid var(--line); }
+	  .step { position: relative; padding: 0 0 38px 32px; }
+	  .step:last-child { padding-bottom: 0; }
+	  .step::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--night); border: 2px solid var(--chalk-dim); }
+	  .step.done::before { background: var(--flood); border-color: var(--flood); }
+	  .step.now::before { background: var(--live); border-color: var(--live); }
+	  .step .when { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--chalk-dim); }
+	  .step h4 { font-family: var(--display); font-size: 28px; text-transform: uppercase; line-height: 1.05; margin: 6px 0 6px; }
+	  .step p { color: var(--chalk-dim); font-size: 15.5px; }
+
+	  /* company */
+	  .company { border-top: 1px solid var(--line); }
+	  .company .wrap { display: grid; grid-template-columns: 1.2fr .8fr; gap: 60px; align-items: end; }
+	  .contact-card { border: 1px solid var(--line); border-radius: 6px; padding: 30px; }
+	  .contact-card dt { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--chalk-dim); margin-top: 18px; }
+	  .contact-card dt:first-child { margin-top: 0; }
+	  .contact-card dd { font-size: 17px; }
+	  .contact-card a { color: var(--flood); text-decoration: none; }
+	  .contact-card a:hover { text-decoration: underline; }
+
+	  footer { border-top: 1px solid var(--line); padding: 30px 0 40px; font-size: 13px; color: var(--chalk-dim); }
+	  footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+	  footer a { text-decoration: none; }
+	  footer a:hover { color: var(--chalk); }
+
+	  @media (max-width: 900px) {
+		nav ul { display: none; }
+		.hero .wrap { grid-template-columns: 1fr; padding-top: 120px; }
+		.frame { max-width: 340px; margin: 10px auto 0; }
+		.table-chip { right: -10px; width: 180px; }
+		.strip .wrap, .apps, .next-grid, .company .wrap, .proof-grid { grid-template-columns: 1fr; }
+		.proof-grid { gap: 36px; }
+		.shots { grid-template-columns: 1fr 1fr; gap: 18px; }
+		.shots figure:nth-child(even) { margin-top: 32px; }
+		.shots img { height: 300px; }
+		.stats { gap: 22px; }
+		.stats b { font-size: 38px; }
+		.play { width: 56px; height: 56px; margin: -28px 0 0 -28px; top: 42%; }
+		.play::after { left: 22px; top: 17px; border-width: 11px 0 11px 17px; }
+		.poster-title { bottom: 36px; font-size: 22px; }
+		.strip div.cell { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; }
+		.strip div.cell:first-child { border-top: 0; }
+		.flow { grid-template-columns: 1fr; gap: 0; }
+		.wire { display: none; }
+		.source { grid-row: auto; margin-bottom: 20px; }
+		section { padding: 84px 0; }
+	  }
+	  @media (prefers-reduced-motion: reduce) {
+		*, *::before, *::after { animation: none !important; transition: none !important; }
 	  }
 	</style>
-
 </head>
 <body>
 
-	<div class="main-area center-text" style="background-image:url(images/countdown-3-1600x900.jpg);">
-		<div class="display-table">
-			<div class="display-table-cell centered-content">
+	<nav>
+		<div class="wrap">
+			<a class="brand" href="#">OFS<span>.</span></a>
+			<ul>
+				<li><a href="#broadcast">Live</a></li>
+				<li><a href="#platform">Platform</a></li>
+				<li><a href="#how">How it works</a></li>
+				<li><a href="#next">Roadmap</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
 
-				<!-- Lottie Animasyon Alanı -->
-				<div id="lottie-animation" style="width: 220px; height: 220px; margin: 0 auto 20px auto;"></div>
+	<header class="hero">
+		<div class="wrap">
+			<div>
+				<div class="status rise"><span class="dot"></span> Prolig · Live in Kocaeli · 500+ streamed videos</div>
+				<h1 class="rise d1">Grassroots football, <em>broadcast</em> like the pros.</h1>
+				<p class="lede rise d2"><strong>Prolig</strong> is an all-in-one platform for amateur 7-a-side leagues — league management, live scoring and YouTube Live streaming with real-time overlays, all running on the same match data.</p>
+				<div class="cta rise d3">
+					<a class="btn btn-primary" href="#platform">See the platform</a>
+					<a class="btn btn-ghost" href="#broadcast">Watch a real match</a>
+				</div>
+			</div>
 
-				<h1 class="title font-white"><b>Hazırlanıyoruz...</b></h1>
-				<p class="desc font-white" style="max-width: 700px; margin: 0 auto 20px auto;">Web sitemiz şu anda planlı bir bakım sürecindedir.
-					 Kısa süre içinde yeniden yayında olacağız. Sabrınız için teşekkür ederiz.</p>
-
-				<p style="font-size: 18px; font-weight: bold; margin-top: 20px;">
-					<a href="mailto:furkan@ofsenterprise.com" style="color: white;">furkan@ofsenterprise.com</a>
-				</p>
-
-				<ul class="social-btn font-white" style="margin-top: 30px;">
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
-				</ul>
-
+			<div class="rise d4" aria-hidden="true">
+				<div class="frame">
+					<div class="screen">
+						<div class="scorebug">
+							<div class="sb-team">HOME</div>
+							<div class="sb-score">2 – 1</div>
+							<div class="sb-team">AWAY</div>
+							<div class="sb-time">38'</div>
+						</div>
+						<div class="live-tag"><i></i>LIVE</div>
+						<div class="lower-third">
+							<b>⚽ Goal — #9</b>
+							<span>Logged from the camera screen</span>
+						</div>
+					</div>
+					<div class="table-chip">
+						<h4>Standings</h4>
+						<table>
+							<tr class="up"><td>1 · Home FC</td><td>22</td></tr>
+							<tr><td>2 · Away FC</td><td>19</td></tr>
+							<tr><td>3 · Team C</td><td>17</td></tr>
+							<tr><td>4 · Team D</td><td>14</td></tr>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
+	</header>
+
+	<section id="broadcast" class="proof">
+		<div class="wrap proof-grid">
+			<button class="player" type="button" data-video="fa0OFE0bhTQ" aria-label="Play Bonzalex – Red Bull FC, streamed with Prolig">
+				<span class="poster-live"><i></i>Streamed with Prolig</span>
+				<span class="play" aria-hidden="true"></span>
+				<span class="poster-title">Bonzalex <em>vs</em> Red Bull FC</span>
+				<span class="poster-sub">Prolig Kocaeli · Full match on YouTube</span>
+			</button>
+			<div>
+				<div class="kicker">Real match · Real stream</div>
+				<h2>Already on air.</h2>
+				<p class="intro">A local league in Kocaeli streams its matches with Prolig and publishes them on the league's YouTube channel.</p>
+				<div class="stats">
+					<div><b>500+</b><span>videos streamed</span></div>
+					<div><b>4</b><span>months live</span></div>
+					<div><b>300+</b><span>YouTube subscribers</span></div>
+					<div><b>150+</b><span>Instagram posts</span></div>
+				</div>
+				<div class="cta" style="margin-top:0">
+					<a class="btn btn-ghost" href="https://www.youtube.com/@ProligKocaeli/streams" target="_blank" rel="noopener">YouTube ↗</a>
+					<a class="btn btn-ghost" href="https://www.instagram.com/proligkocaeli/" target="_blank" rel="noopener">Instagram ↗</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="strip">
+		<div class="wrap">
+			<div class="cell"><b>Paid &amp; patchy</b><p>Local tournaments stream with paid phone apps that don't know the score, the lineups or the table.</p></div>
+			<div class="cell"><b>Spreadsheets</b><p>Fixtures, standings and top scorers are often tracked by hand and posted late.</p></div>
+			<div class="cell"><b>One system</b><p>Prolig connects the match, the stream and the league, so every update happens once.</p></div>
+		</div>
+	</section>
+
+	<section id="platform">
+		<div class="wrap">
+			<div class="kicker">The platform</div>
+			<h2>Two apps. One match feed.</h2>
+			<p class="intro">Organisers run the league from one app and broadcast from another. Both read and write the same match data in real time — a goal logged on the camera screen appears in the league app instantly.</p>
+
+			<div class="apps">
+				<article class="app">
+					<span class="num">01</span>
+					<div class="tag">Flutter · Android</div>
+					<h3>Prolig League</h3>
+					<p>Everything a league organiser needs, from the first fixture to the season report.</p>
+					<ul>
+						<li>Teams, squads and 7-a-side lineups with formation view</li>
+						<li>Live scoring from an operator screen</li>
+						<li>Automatic standings, top scorers and player stats</li>
+						<li>PDF match reports and full season reports</li>
+						<li>Ready-to-post social graphics: results, fixtures, tables</li>
+						<li>Monthly bonus-point system for teams</li>
+					</ul>
+				</article>
+				<article class="app">
+					<span class="num">02</span>
+					<div class="tag">Android · Native</div>
+					<h3>Baykul Broadcaster</h3>
+					<p>Turns a phone into a broadcast camera <em class="hl">and</em> a live scoring console — streaming straight to YouTube Live.</p>
+					<ul>
+						<li><strong>Log goals, cards and substitutions mid-stream</strong> — without leaving the camera view</li>
+						<li><strong>Every event syncs instantly</strong> to the Prolig league app: score, standings, player stats</li>
+						<li>Real-time score and lineup overlays on the stream</li>
+						<li>Direct YouTube Live broadcast setup from the app</li>
+						<li>Stream health monitoring with automatic retry</li>
+					</ul>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section id="screens" class="screens">
+		<div class="wrap">
+			<div class="kicker">Inside the apps</div>
+			<h2>Real screens. Real matches.</h2>
+			<p class="intro">Unedited screenshots and photos from the Kocaeli league. Player names are blurred for privacy.</p>
+			<div class="shots">
+				<figure>
+					<img src="images/app/streaming-pitch.jpg" alt="A phone on a tripod streaming a 7-a-side match with Baykul Broadcaster" loading="lazy" width="720" height="1280">
+					<figcaption><b>On the touchline</b>A phone on a tripod streams the match to YouTube Live with Baykul Broadcaster.</figcaption>
+				</figure>
+				<figure>
+					<img src="images/app/live-scoring.jpg" alt="Live scoring screen with score, match clock and buttons for goal, cards, substitution and VAR" loading="lazy" width="586" height="1280">
+					<figcaption><b>Live scoring</b>Score, clock and one-tap goals, cards, substitutions — even VAR and forfeits.</figcaption>
+				</figure>
+				<figure>
+					<img src="images/app/standings.jpg" alt="League standings table in the Prolig app" loading="lazy" width="700" height="1238">
+					<figcaption><b>Standings</b>The table updates itself the moment a result is logged.</figcaption>
+				</figure>
+				<figure>
+					<img src="images/app/social-results.jpg" alt="Auto-generated 'match results of the day' graphic for social media" loading="lazy" width="720" height="900">
+					<figcaption><b>Social graphics</b>Daily results, fixtures and tables, generated ready to post — and published on <a href="https://www.instagram.com/proligkocaeli/" target="_blank" rel="noopener">@proligkocaeli</a>.</figcaption>
+				</figure>
+			</div>
+		</div>
+	</section>
+
+	<section id="how" class="flow-sec">
+		<div class="wrap">
+			<div class="kicker">How it works</div>
+			<h2>Enter it once. See it everywhere.</h2>
+			<p class="intro">A goal logged during the match instantly updates every surface — no re-typing, no delay.</p>
+
+			<div class="flow">
+				<div class="source">
+					<div class="kicker">Single source of truth</div>
+					<h3>Live match data</h3>
+					<p>Goals, cards, substitutions and the match clock — logged on the camera screen while streaming, or from the operator screen.</p>
+				</div>
+				<div class="wire"></div>
+				<div class="out"><b>Stream</b><span>Scorebug and lineup overlays on YouTube Live</span></div>
+				<div class="out"><b>Standings</b><span>Table, top scorers and player stats</span></div>
+				<div class="out"><b>Reports</b><span>Match and season PDFs</span></div>
+				<div class="out"><b>Social</b><span>Shareable graphics for results and fixtures</span></div>
+			</div>
+		</div>
+	</section>
+
+	<section id="next">
+		<div class="wrap next-grid">
+			<div>
+				<div class="kicker">Roadmap</div>
+				<h2>Built with Claude. Next: powered by it.</h2>
+				<p class="intro">Both apps were built with Anthropic's Claude. The next step is bringing Claude into the product itself.</p>
+			</div>
+			<div class="roadmap">
+				<div class="step done">
+					<div class="when">Done</div>
+					<h4>League app + broadcaster</h4>
+					<p>Two connected apps, built and shipped to a closed beta.</p>
+				</div>
+				<div class="step now">
+					<div class="when">Now</div>
+					<h4>Closed beta: Prolig Kocaeli</h4>
+					<p>For four months a local league in Kocaeli has run its matches on Prolig — 500+ videos streamed to <a href="https://www.youtube.com/@ProligKocaeli" target="_blank" rel="noopener" style="color:var(--flood)">youtube.com/@ProligKocaeli</a> — and feeds back what to improve.</p>
+				</div>
+				<div class="step">
+					<div class="when">Next</div>
+					<h4>AI match summaries &amp; commentary</h4>
+					<p>Automatic, Turkish-first match reports written from the live event data.</p>
+				</div>
+				<div class="step">
+					<div class="when">Next</div>
+					<h4>Performance insights &amp; social posts</h4>
+					<p>Player and team insights, plus a ready-to-publish post for every match.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="contact" class="company">
+		<div class="wrap">
+			<div>
+				<div class="kicker">The company</div>
+				<h2>Made in Istanbul.</h2>
+				<p class="intro">Prolig is developed by OFS Dış Ticaret Ltd. Şti., an Istanbul-based company founded in 2022, together with its sister company OFS Enterprise LLC under the same owner.</p>
+			</div>
+			<dl class="contact-card">
+				<dt>Contact</dt>
+				<dd><a href="mailto:furkan@ofsenterprise.com">furkan@ofsenterprise.com</a></dd>
+				<dt>Founder</dt>
+				<dd>Furkan Solak</dd>
+				<dt>Location</dt>
+				<dd>Istanbul, Türkiye</dd>
+			</dl>
+		</div>
+	</section>
 
 	<script>
-	  // Lottie Animasyonu
-	  lottie.loadAnimation({
-		container: document.getElementById('lottie-animation'),
-		renderer: 'svg',
-		loop: true,
-		autoplay: true,
-		path: 'paperplane.json'
+	  // YouTube oynatıcısını sadece tıklanınca yükle
+	  document.querySelectorAll('.player[data-video]').forEach(function (btn) {
+		btn.addEventListener('click', function () {
+		  var f = document.createElement('iframe');
+		  f.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.video + '?autoplay=1&rel=0';
+		  f.title = btn.getAttribute('aria-label');
+		  f.allow = 'autoplay; encrypted-media; picture-in-picture';
+		  f.allowFullscreen = true;
+		  btn.replaceChildren(f);
+		}, { once: true });
 	  });
 	</script>
+
+	<footer>
+		<div class="wrap">
+			<span>© <script>document.write(new Date().getFullYear())</script> OFS Dış Ticaret Ltd. Şti.</span>
+			<span><a href="https://www.youtube.com/@ProligKocaeli" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/proligkocaeli/" target="_blank" rel="noopener">Instagram</a></span>
+		</div>
+	</footer>
+
 </body>
 </html>

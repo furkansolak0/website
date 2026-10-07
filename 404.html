@@ -1,56 +1,20 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yönlendiriliyor…</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 24px; }
-    .muted { color: #666; }
-  </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Page not found — OFS</title>
+	<style>
+	  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #07110c; color: #eef3ea; font-family: "Helvetica Neue", sans-serif; text-align: center; padding: 16px; }
+	  h1 { font-size: 72px; margin: 0; color: #d8ff3e; }
+	  a { color: #d8ff3e; }
+	</style>
 </head>
 <body>
-  <h3>Yönlendiriliyor…</h3>
-  <p class="muted">Lütfen bekleyin.</p>
-
-  <script>
-    (function () {
-      // ✅ Senin Supabase projen
-      var SUPABASE_URL = "https://pdcrdlnraaiqvrpewiyz.supabase.co";
-
-      // ✅ Uygulamanın deep link’i
-      var APP_DEEPLINK = "promptio://login-callback";
-
-      var path = window.location.pathname || "/";
-      var search = window.location.search || "";
-      var hash = window.location.hash || "";
-
-      // 1) Supabase verify linki buraya gelirse:
-      //    https://ofsenterprise.com/auth/v1/verify?token=...&type=signup
-      // -> bunu gerçek Supabase verify endpointine taşı
-      if (path.indexOf("/auth/v1/") === 0) {
-        var target = SUPABASE_URL + path + search;
-
-        // redirect_to ekle (yoksa ekle, varsa ezme)
-        if (target.indexOf("redirect_to=") === -1) {
-          target += (target.indexOf("?") === -1 ? "?" : "&") + "redirect_to=" + encodeURIComponent(APP_DEEPLINK);
-        }
-
-        window.location.replace(target);
-        return;
-      }
-
-      // 2) Bazı akışlarda token hash ile gelebiliyor (örn: #access_token=...)
-      // -> direkt app’e gönder
-      if (hash && hash.indexOf("access_token=") !== -1) {
-        var appUrl = APP_DEEPLINK + (hash.startsWith("#") ? ("?" + hash.substring(1)) : ("?" + hash));
-        window.location.replace(appUrl);
-        return;
-      }
-
-      // 3) Diğer 404’lerde ana sayfaya dön
-      window.location.replace("https://ofsenterprise.com/");
-    })();
-  </script>
+	<div>
+		<h1>404</h1>
+		<p>This page doesn't exist.</p>
+		<p><a href="/">Back to ofsenterprise.com</a></p>
+	</div>
 </body>
 </html>
