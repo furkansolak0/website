@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baykul Broadcaster — Live streaming for amateur football | OFS</title>
+    <meta name="description" content="Baykul Broadcaster turns a phone into a broadcast camera: YouTube Live streaming with real-time score overlays and in-stream match logging. A product by OFS.">
+
+    <script>
+      if (window.location.hostname === 'www.ofsenterprise.com') {
+        window.location.replace('https://ofsenterprise.com' + window.location.pathname + window.location.search + window.location.hash);
+      }
+    </script>
+
+    <meta property="og:title" content="Baykul Broadcaster — Live streaming for amateur football | OFS">
+    <meta property="og:description" content="Baykul Broadcaster turns a phone into a broadcast camera: YouTube Live streaming with real-time score overlays and in-stream match logging. A product by OFS.">
+    <meta property="og:url" content="https://ofsenterprise.com/baykul.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ofsenterprise.com/images/app/streaming-pitch.jpg">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="assets/site.css" rel="stylesheet">
+</head>
+<body class="text-gray-900 antialiased bg-white">
+
+    <header class="fixed z-30 w-full bg-white/90 backdrop-blur border-b border-gray-100">
+        <nav class="py-3">
+            <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
+                <a href="/" class="flex items-center">
+                    <img src="images/ofs-logo.png" class="mr-3 w-9 h-9" width="36" height="36" alt="OFS logo">
+                    <span class="self-center hidden text-xl font-bold tracking-tight sm:inline whitespace-nowrap">OFS</span>
+                    <span class="hidden mx-3 text-gray-300 sm:inline">/</span>
+                    <span class="self-center text-lg font-semibold tracking-tight text-gray-500 sm:text-xl whitespace-nowrap">Baykul Broadcaster</span>
+                </a>
+                <div class="flex items-center lg:order-2">
+                    <a href="#contact" class="hidden sm:inline-block text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:ring-emerald-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 focus:outline-none">Get in touch</a>
+                    <button id="menu-toggle" type="button" class="inline-flex items-center p-2 ml-2 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="main-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="main-menu">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                        <li><a href="#features" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0">Features</a></li>
+                        <li><a href="#live" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0">Live</a></li>
+                        <li><a href="#screens" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0">Screens</a></li>
+                        <li><a href="/#products" class="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0">All products</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="bg-white">
+        <div class="grid max-w-screen-xl px-4 pt-28 pb-12 mx-auto lg:gap-12 lg:py-20 lg:grid-cols-12 lg:pt-36">
+            <div class="mr-auto place-self-center lg:col-span-7">
+                <span class="inline-flex items-center px-3 py-1 mb-6 text-sm font-medium rounded-full ring-1 text-red-700 bg-red-50 ring-red-100"><span class="relative flex w-2 h-2 mr-2"><span class="absolute inline-flex w-full h-full bg-red-400 rounded-full opacity-75 animate-ping"></span><span class="relative inline-flex w-2 h-2 bg-red-500 rounded-full"></span></span>Live in Kocaeli · Closed beta</span>
+                <h1 class="max-w-2xl mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl xl:text-6xl">Turn a phone into a broadcast camera.</h1>
+                <p class="max-w-xl mb-8 text-gray-500 md:text-lg lg:text-xl">Baykul Broadcaster streams matches straight to YouTube Live with real-time score and lineup overlays. Goals, cards and substitutions are logged on the camera screen without stopping the broadcast.</p>
+                <div class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+                    <a href="#live" class="inline-flex items-center justify-center w-full px-5 py-3 text-base font-medium text-center text-white bg-emerald-700 rounded-lg sm:w-auto hover:bg-emerald-800 focus:ring-4 focus:ring-emerald-300"><svg class="w-5 h-5 mr-2 -ml-1" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>Watch a real match</a>
+                    <a href="#features" class="inline-flex items-center justify-center w-full px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-50 focus:ring-4 focus:ring-gray-100">See the features</a>
+                </div>
+            </div>
+            <div class="flex justify-center mt-12 lg:mt-0 lg:col-span-5">
+                <figure class="relative w-full max-w-md">
+                    <img class="object-cover w-full shadow-2xl aspect-[4/5] rounded-2xl ring-1 ring-gray-900/5" src="images/app/streaming-pitch.jpg" alt="A phone on a tripod streaming a 7-a-side match with Baykul Broadcaster">
+                    <figcaption class="absolute flex items-center px-4 py-3 bg-white shadow-lg left-4 bottom-4 rounded-xl ring-1 ring-gray-900/5"><span class="w-2.5 h-2.5 mr-3 bg-red-500 rounded-full"></span><span class="text-sm font-medium">Streaming a league match in Kocaeli</span></figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-50 border-y border-gray-100">
+        <div class="max-w-screen-xl px-4 py-10 mx-auto lg:py-12">
+            <dl class="grid grid-cols-2 gap-8 text-center lg:grid-cols-4">
+                <div><dt class="text-3xl font-extrabold tracking-tight md:text-4xl">500+</dt><dd class="mt-1 text-gray-500">Videos streamed</dd></div>
+                <div><dt class="text-3xl font-extrabold tracking-tight md:text-4xl">4 months</dt><dd class="mt-1 text-gray-500">Live with a local league</dd></div>
+                <div><dt class="text-3xl font-extrabold tracking-tight md:text-4xl">300+</dt><dd class="mt-1 text-gray-500">YouTube subscribers</dd></div>
+                <div><dt class="text-3xl font-extrabold tracking-tight md:text-4xl">Android</dt><dd class="mt-1 text-gray-500">Native app</dd></div>
+            </dl>
+        </div>
+    </section>
+
+    <section id="features" class="bg-white scroll-mt-20">
+        <div class="max-w-screen-xl px-4 py-16 mx-auto lg:py-24">
+            <div class="max-w-screen-md mb-10 lg:mb-14">
+                <p class="mb-3 text-sm font-semibold tracking-wide text-emerald-700 uppercase">Features</p>
+                <h2 class="mb-4 text-3xl font-extrabold tracking-tight md:text-4xl">A camera and a scoring console in one</h2>
+                <p class="text-gray-500 sm:text-xl">One person with one phone can film the match and keep the score at the same time.</p>
+            </div>
+            <div class="grid gap-8 lg:grid-cols-2">
+                <div class="p-8 border border-gray-200 rounded-2xl">
+                    <h3 class="mb-5 text-2xl font-bold">Broadcast</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Direct YouTube Live broadcast setup from the app</span></li>
+                        <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Real-time score and lineup overlays on the stream</span></li>
+                        <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Stream health monitoring with automatic retry</span></li>
+                        <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Runs on a standard Android phone and a tripod</span></li>
+                    </ul>
+                </div>
+                <div class="p-8 border border-gray-200 rounded-2xl">
+                    <h3 class="mb-5 text-2xl font-bold">Match logging</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span><strong class="font-semibold text-gray-900">Log goals, cards and substitutions mid-stream</strong>, without leaving the camera view</span></li>
+                        <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span><strong class="font-semibold text-gray-900">Every event syncs instantly</strong> to Prolig: score, standings, player stats</span></li>
+                        <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Start the match, half-time and second half from the same panel</span></li>
+                        <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Overlays driven by the same data as the league app</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid gap-8 mt-16 md:grid-cols-3">
+                <div><div class="flex items-center justify-center w-10 h-10 mb-4 font-bold text-white rounded-full bg-emerald-700">1</div><h3 class="mb-2 text-lg font-bold">Log it once</h3><p class="text-gray-500">A goal, card or substitution is entered on the camera screen in Baykul Broadcaster, or on the operator screen in Prolig.</p></div>
+                <div><div class="flex items-center justify-center w-10 h-10 mb-4 font-bold text-white rounded-full bg-emerald-700">2</div><h3 class="mb-2 text-lg font-bold">It reaches the stream</h3><p class="text-gray-500">The scorebug and lineup overlays on YouTube Live update in real time.</p></div>
+                <div><div class="flex items-center justify-center w-10 h-10 mb-4 font-bold text-white rounded-full bg-emerald-700">3</div><h3 class="mb-2 text-lg font-bold">The league updates itself</h3><p class="text-gray-500">Standings, top scorers, reports and social graphics in Prolig follow automatically.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="live" class="bg-gray-900 scroll-mt-20">
+        <div class="items-center max-w-screen-xl gap-12 px-4 py-16 mx-auto lg:grid lg:grid-cols-5 lg:py-24">
+            <div class="lg:col-span-2">
+                <p class="mb-3 text-sm font-semibold tracking-wide text-emerald-400 uppercase">Real match, real stream</p>
+                <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-white md:text-4xl">Already on air</h2>
+                <p class="mb-8 text-gray-400 md:text-lg">A local league in Kocaeli streams its matches with Baykul Broadcaster and publishes them on the league's YouTube channel.</p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://www.youtube.com/@ProligKocaeli/streams" target="_blank" rel="noopener" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-gray-900 bg-white rounded-lg hover:bg-gray-100">YouTube channel ↗</a>
+                    <a href="https://www.instagram.com/proligkocaeli/" target="_blank" rel="noopener" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-white border border-gray-600 rounded-lg hover:bg-gray-800">Instagram ↗</a>
+                </div>
+            </div>
+            <div class="mt-10 lg:mt-0 lg:col-span-3">
+                <button id="player" type="button" data-video="fa0OFE0bhTQ" aria-label="Play Bonzalex – Red Bull FC, streamed with Baykul Broadcaster" class="relative block w-full overflow-hidden text-left bg-black shadow-2xl aspect-video rounded-2xl ring-1 ring-white/10 group">
+                    <img class="absolute inset-0 object-cover w-full h-full opacity-70" src="images/app/streaming-pitch.jpg" alt="" loading="lazy">
+                    <span class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></span>
+                    <span class="absolute flex items-center justify-center w-20 h-20 transition -translate-x-1/2 -translate-y-1/2 bg-white rounded-full shadow-xl top-1/2 left-1/2 group-hover:scale-110"><svg class="w-8 h-8 ml-1 text-emerald-700" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg></span>
+                    <span class="absolute left-5 bottom-5"><span class="block text-lg font-bold text-white sm:text-xl">Bonzalex vs Red Bull FC</span><span class="block text-sm text-gray-300">Prolig Kocaeli · Full match on YouTube</span></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-50 border-y border-gray-100">
+        <div class="max-w-screen-xl px-4 py-16 mx-auto lg:py-20">
+            <a href="prolig.html" class="grid items-center overflow-hidden transition bg-white border border-gray-200 shadow-sm group rounded-2xl md:grid-cols-3 hover:shadow-lg hover:border-emerald-200">
+                <img class="object-cover object-top w-full h-56 md:h-full md:max-h-72" src="images/app/standings.jpg" alt="Prolig" loading="lazy">
+                <div class="p-8 md:col-span-2 lg:p-10">
+                    <p class="mb-2 text-sm font-semibold tracking-wide text-emerald-700 uppercase">Works with</p>
+                    <h2 class="mb-3 text-2xl font-extrabold tracking-tight md:text-3xl">Prolig</h2>
+                    <p class="mb-5 text-gray-500 md:text-lg">Our league management app. Everything logged during the broadcast lands in Prolig: standings, top scorers, match reports and social graphics update on their own.</p>
+                    <span class="inline-flex items-center font-semibold text-emerald-700 group-hover:text-emerald-800">View Prolig<svg class="w-5 h-5 ml-1 transition group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="screens" class="bg-white scroll-mt-20">
+        <div class="items-center max-w-screen-xl gap-16 px-4 py-16 mx-auto lg:grid lg:grid-cols-2 lg:py-24">
+            <img class="object-cover w-full shadow-xl aspect-[4/3] rounded-2xl ring-1 ring-gray-900/5" src="images/app/streaming-pitch.jpg" alt="Baykul Broadcaster running on a phone on a tripod beside the pitch" loading="lazy">
+            <div class="mt-10 lg:mt-0">
+                <p class="mb-3 text-sm font-semibold tracking-wide text-emerald-700 uppercase">On the touchline</p>
+                <h2 class="mb-4 text-3xl font-extrabold tracking-tight md:text-4xl">No production crew needed</h2>
+                <p class="mb-4 text-gray-500 md:text-lg">A phone on a tripod is the whole setup. The app shows the live picture with the score overlay, and the match panel sits on the same screen.</p>
+                <p class="text-gray-500 md:text-lg">This photo was taken during a league match in Kocaeli.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-white scroll-mt-20">
+        <div class="max-w-screen-xl px-4 py-16 mx-auto lg:py-20">
+            <div class="max-w-screen-sm mx-auto text-center">
+                <h2 class="mb-4 text-3xl font-extrabold tracking-tight md:text-4xl">Want to stream your league?</h2>
+                <p class="mb-8 text-gray-500 md:text-lg">Baykul Broadcaster is in closed beta. If you organise a league or tournament and want to try it, write to us.</p>
+                <a href="mailto:furkan@ofsenterprise.com" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-emerald-700 rounded-lg hover:bg-emerald-800 focus:ring-4 focus:ring-emerald-300">furkan@ofsenterprise.com</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-gray-100">
+        <div class="max-w-screen-xl p-4 py-10 mx-auto lg:py-14">
+            <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+                <div class="col-span-2">
+                    <a href="/" class="flex items-center mb-4">
+                        <img src="images/ofs-logo.png" class="w-8 h-8 mr-3" width="32" height="32" alt="OFS logo">
+                        <span class="text-lg font-bold tracking-tight">OFS</span>
+                    </a>
+                    <p class="max-w-xs text-sm text-gray-500">Baykul Broadcaster is a product by OFS Dış Ticaret Ltd. Şti.</p>
+                </div>
+                <div>
+                    <h3 class="mb-4 text-sm font-semibold text-gray-900 uppercase">Products</h3>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="prolig.html" class="hover:text-gray-900">Prolig</a></li>
+                        <li><a href="baykul.html" class="hover:text-gray-900">Baykul Broadcaster</a></li>
+                        <li><a href="/" class="hover:text-gray-900">OFS company site</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-4 text-sm font-semibold text-gray-900 uppercase">Follow</h3>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="https://www.youtube.com/@ProligKocaeli" target="_blank" rel="noopener" class="hover:text-gray-900">YouTube</a></li>
+                        <li><a href="https://www.instagram.com/proligkocaeli/" target="_blank" rel="noopener" class="hover:text-gray-900">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-8 border-gray-200">
+            <p class="text-sm text-center text-gray-500">© <script>document.write(new Date().getFullYear())</script> OFS Dış Ticaret Ltd. Şti. · Istanbul, Türkiye</p>
+        </div>
+    </footer>
+
+    <script>
+      (function () {
+        var b = document.getElementById('menu-toggle'), m = document.getElementById('main-menu');
+        b.addEventListener('click', function () { var open = m.classList.toggle('hidden') === false; b.setAttribute('aria-expanded', open); });
+        m.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { m.classList.add('hidden'); }); });
+
+        var p = document.getElementById('player');
+        p.addEventListener('click', function () {
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + p.dataset.video + '?autoplay=1&rel=0';
+          f.title = p.getAttribute('aria-label');
+          f.allow = 'autoplay; encrypted-media; picture-in-picture';
+          f.allowFullscreen = true;
+          f.className = 'absolute inset-0 w-full h-full';
+          p.replaceChildren(f);
+        }, { once: true });
+      })();
+    </script>
+</body>
+</html>

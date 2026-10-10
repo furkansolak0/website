@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prolig — League management for amateur football | OFS</title>
+    <meta name="description" content="Prolig is a league management app for amateur 7-a-side football: live scoring, standings, player statistics, reports and social graphics. A product by OFS.">
+
+    <script>
+      if (window.location.hostname === 'www.ofsenterprise.com') {
+        window.location.replace('https://ofsenterprise.com' + window.location.pathname + window.location.search + window.location.hash);
+      }
+    </script>
+
+    <meta property="og:title" content="Prolig — League management for amateur football | OFS">
+    <meta property="og:description" content="Prolig is a league management app for amateur 7-a-side football: live scoring, standings, player statistics, reports and social graphics. A product by OFS.">
+    <meta property="og:url" content="https://ofsenterprise.com/prolig.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ofsenterprise.com/images/app/streaming-pitch.jpg">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="assets/site.css" rel="stylesheet">
+</head>
+<body class="text-gray-900 antialiased bg-white">
+
+    <header class="fixed z-30 w-full bg-white/90 backdrop-blur border-b border-gray-100">
+        <nav class="py-3">
+            <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
+                <a href="/" class="flex items-center">
+                    <img src="images/ofs-logo.png" class="mr-3 w-9 h-9" width="36" height="36" alt="OFS logo">
+                    <span class="self-center hidden text-xl font-bold tracking-tight sm:inline whitespace-nowrap">OFS</span>
+                    <span class="hidden mx-3 text-gray-300 sm:inline">/</span>
+                    <span class="self-center text-lg font-semibold tracking-tight text-gray-500 sm:text-xl whitespace-nowrap">Prolig</span>
+                </a>
+                <div class="flex items-center lg:order-2">
+                    <a href="#contact" class="hidden sm:inline-block text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:ring-emerald-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 focus:outline-none">Get in touch</a>
+                    <button id="menu-toggle" type="button" class="inline-flex items-center p-2 ml-2 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="main-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="main-menu">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                        <li><a href="#features" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0">Features</a></li>
+                        <li><a href="#screens" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0">Screens</a></li>
+                        <li><a href="#roadmap" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0">Roadmap</a></li>
+                        <li><a href="/#products" class="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0">All products</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="bg-white">
+        <div class="grid max-w-screen-xl px-4 pt-28 pb-12 mx-auto lg:gap-12 lg:py-20 lg:grid-cols-12 lg:pt-36">
+            <div class="mr-auto place-self-center lg:col-span-7">
+                <span class="inline-flex items-center px-3 py-1 mb-6 text-sm font-medium rounded-full ring-1 text-red-700 bg-red-50 ring-red-100"><span class="relative flex w-2 h-2 mr-2"><span class="absolute inline-flex w-full h-full bg-red-400 rounded-full opacity-75 animate-ping"></span><span class="relative inline-flex w-2 h-2 bg-red-500 rounded-full"></span></span>In use by a league in Kocaeli · Closed beta</span>
+                <h1 class="max-w-2xl mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl xl:text-6xl">League management for amateur football.</h1>
+                <p class="max-w-xl mb-8 text-gray-500 md:text-lg lg:text-xl">Prolig runs a league from the first fixture to the season report: lineups, live scoring, standings, player stats, PDF reports and ready-to-post social graphics.</p>
+                <div class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+                    <a href="#features" class="inline-flex items-center justify-center w-full px-5 py-3 text-base font-medium text-center text-white bg-emerald-700 rounded-lg sm:w-auto hover:bg-emerald-800 focus:ring-4 focus:ring-emerald-300">See the features</a>
+                    <a href="#screens" class="inline-flex items-center justify-center w-full px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-50 focus:ring-4 focus:ring-gray-100">View screens</a>
+                </div>
+            </div>
+            <div class="flex justify-center mt-12 lg:mt-0 lg:col-span-5">
+                <div class="relative">
+                    <div class="absolute rounded-full -inset-6 bg-emerald-100/70 blur-2xl"></div>
+                    <img class="relative w-64 shadow-2xl sm:w-72 rounded-[2rem] ring-8 ring-gray-900" src="images/app/standings.jpg" alt="League standings table in the Prolig app">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-50 border-y border-gray-100">
+        <div class="max-w-screen-xl px-4 py-10 mx-auto lg:py-12">
+            <dl class="grid grid-cols-2 gap-8 text-center lg:grid-cols-4">
+                <div><dt class="text-3xl font-extrabold tracking-tight md:text-4xl">4 months</dt><dd class="mt-1 text-gray-500">In use by a local league</dd></div>
+                <div><dt class="text-3xl font-extrabold tracking-tight md:text-4xl">150+</dt><dd class="mt-1 text-gray-500">Instagram posts from app data</dd></div>
+                <div><dt class="text-3xl font-extrabold tracking-tight md:text-4xl">7-a-side</dt><dd class="mt-1 text-gray-500">Built for amateur leagues</dd></div>
+                <div><dt class="text-3xl font-extrabold tracking-tight md:text-4xl">Android</dt><dd class="mt-1 text-gray-500">Flutter app</dd></div>
+            </dl>
+        </div>
+    </section>
+
+    <section id="features" class="bg-white scroll-mt-20">
+        <div class="max-w-screen-xl px-4 py-16 mx-auto lg:py-24">
+            <div class="max-w-screen-md mb-10 lg:mb-14">
+                <p class="mb-3 text-sm font-semibold tracking-wide text-emerald-700 uppercase">Features</p>
+                <h2 class="mb-4 text-3xl font-extrabold tracking-tight md:text-4xl">Everything a league organiser needs</h2>
+                <p class="text-gray-500 sm:text-xl">Enter a match event once and the whole league stays up to date.</p>
+            </div>
+            <div class="grid gap-8 lg:grid-cols-2">
+                <div class="p-8 border border-gray-200 rounded-2xl">
+                    <h3 class="mb-5 text-2xl font-bold">Match day</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Teams, squads and 7-a-side lineups with formation view</span></li>
+                        <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Live scoring from an operator screen: goals, cards, substitutions</span></li>
+                        <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Match clock, half-time and full-time control</span></li>
+                        <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Forfeit and VAR decisions</span></li>
+                    </ul>
+                </div>
+                <div class="p-8 border border-gray-200 rounded-2xl">
+                    <h3 class="mb-5 text-2xl font-bold">League and content</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Automatic standings, top scorers and player stats</span></li>
+                        <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>PDF match reports and full season reports</span></li>
+                        <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Ready-to-post social graphics: results, fixtures, tables</span></li>
+                        <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Monthly bonus-point system for teams</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid gap-8 mt-16 md:grid-cols-3">
+                <div><div class="flex items-center justify-center w-10 h-10 mb-4 font-bold text-white rounded-full bg-emerald-700">1</div><h3 class="mb-2 text-lg font-bold">Log it once</h3><p class="text-gray-500">A goal, card or substitution is entered on the camera screen in Baykul Broadcaster, or on the operator screen in Prolig.</p></div>
+                <div><div class="flex items-center justify-center w-10 h-10 mb-4 font-bold text-white rounded-full bg-emerald-700">2</div><h3 class="mb-2 text-lg font-bold">It reaches the stream</h3><p class="text-gray-500">The scorebug and lineup overlays on YouTube Live update in real time.</p></div>
+                <div><div class="flex items-center justify-center w-10 h-10 mb-4 font-bold text-white rounded-full bg-emerald-700">3</div><h3 class="mb-2 text-lg font-bold">The league updates itself</h3><p class="text-gray-500">Standings, top scorers, reports and social graphics in Prolig follow automatically.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-50 border-y border-gray-100">
+        <div class="max-w-screen-xl px-4 py-16 mx-auto lg:py-20">
+            <a href="baykul.html" class="grid items-center overflow-hidden transition bg-white border border-gray-200 shadow-sm group rounded-2xl md:grid-cols-3 hover:shadow-lg hover:border-emerald-200">
+                <img class="object-cover object-top w-full h-56 md:h-full md:max-h-72" src="images/app/streaming-pitch.jpg" alt="Baykul Broadcaster" loading="lazy">
+                <div class="p-8 md:col-span-2 lg:p-10">
+                    <p class="mb-2 text-sm font-semibold tracking-wide text-emerald-700 uppercase">Works with</p>
+                    <h2 class="mb-3 text-2xl font-extrabold tracking-tight md:text-3xl">Baykul Broadcaster</h2>
+                    <p class="mb-5 text-gray-500 md:text-lg">Our streaming app sends matches to YouTube Live. Events logged on its camera screen are written straight into Prolig, so the stream and the league table always agree.</p>
+                    <span class="inline-flex items-center font-semibold text-emerald-700 group-hover:text-emerald-800">View Baykul Broadcaster<svg class="w-5 h-5 ml-1 transition group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="screens" class="bg-white scroll-mt-20">
+        <div class="max-w-screen-xl px-4 py-16 mx-auto lg:py-24">
+            <div class="max-w-screen-md mb-10 lg:mb-14">
+                <p class="mb-3 text-sm font-semibold tracking-wide text-emerald-700 uppercase">Inside the app</p>
+                <h2 class="mb-4 text-3xl font-extrabold tracking-tight md:text-4xl">Real screens from real matches</h2>
+                <p class="text-gray-500 sm:text-xl">Unedited screenshots from the Kocaeli league. Player names are blurred for privacy.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-6 lg:grid-cols-3">
+                <figure>
+                    <img class="object-cover object-top w-full border border-gray-200 shadow-md aspect-[9/16] rounded-2xl" src="images/app/live-scoring.jpg" alt="Live scoring screen" loading="lazy">
+                    <figcaption class="mt-4"><span class="block font-bold">Live scoring</span><span class="text-sm text-gray-500">Score, clock and one-tap goals, cards and substitutions.</span></figcaption>
+                </figure>
+                <figure>
+                    <img class="object-cover object-top w-full border border-gray-200 shadow-md aspect-[9/16] rounded-2xl" src="images/app/standings.jpg" alt="League standings table" loading="lazy">
+                    <figcaption class="mt-4"><span class="block font-bold">Standings</span><span class="text-sm text-gray-500">The table updates the moment a result is logged.</span></figcaption>
+                </figure>
+                <figure>
+                    <img class="object-cover object-top w-full border border-gray-200 shadow-md aspect-[9/16] rounded-2xl" src="images/app/social-results.jpg" alt="Auto-generated match results graphic" loading="lazy">
+                    <figcaption class="mt-4"><span class="block font-bold">Social graphics</span><span class="text-sm text-gray-500">Daily results, fixtures and tables, generated ready to post.</span></figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap" class="bg-gray-50 scroll-mt-20">
+        <div class="max-w-screen-xl gap-16 px-4 py-16 mx-auto lg:grid lg:grid-cols-2 lg:py-24">
+            <div>
+                <p class="mb-3 text-sm font-semibold tracking-wide text-emerald-700 uppercase">Roadmap</p>
+                <h2 class="mb-4 text-3xl font-extrabold tracking-tight md:text-4xl">Built with Claude. Next: powered by it.</h2>
+                <p class="text-gray-500 md:text-lg">Prolig was built with Anthropic's Claude. The next step is bringing Claude into the product itself.</p>
+            </div>
+            <ol class="relative mt-10 ml-3 border-l border-gray-300 lg:mt-0">
+                <li class="mb-10 ml-8">
+                    <span class="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 bg-emerald-600 ring-8 ring-gray-50"><svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></span>
+                    <span class="text-xs font-semibold tracking-wide text-emerald-700 uppercase">Done</span>
+                    <h3 class="text-lg font-bold">League app shipped to closed beta</h3>
+                    <p class="text-gray-500">Scoring, standings, stats, reports and social graphics.</p>
+                </li>
+                <li class="mb-10 ml-8">
+                    <span class="absolute flex items-center justify-center w-6 h-6 bg-red-500 rounded-full -left-3 ring-8 ring-gray-50"><span class="w-2 h-2 bg-white rounded-full"></span></span>
+                    <span class="text-xs font-semibold tracking-wide text-red-600 uppercase">Now</span>
+                    <h3 class="text-lg font-bold">Closed beta with a league in Kocaeli</h3>
+                    <p class="text-gray-500">A local league runs its matches on Prolig and feeds back what to improve.</p>
+                </li>
+                <li class="mb-10 ml-8">
+                    <span class="absolute w-6 h-6 bg-white border-2 border-gray-300 rounded-full -left-3 ring-8 ring-gray-50"></span>
+                    <span class="text-xs font-semibold tracking-wide text-gray-500 uppercase">Next</span>
+                    <h3 class="text-lg font-bold">AI match summaries and commentary</h3>
+                    <p class="text-gray-500">Automatic, Turkish-first match reports written from the live event data.</p>
+                </li>
+                <li class="ml-8">
+                    <span class="absolute w-6 h-6 bg-white border-2 border-gray-300 rounded-full -left-3 ring-8 ring-gray-50"></span>
+                    <span class="text-xs font-semibold tracking-wide text-gray-500 uppercase">Next</span>
+                    <h3 class="text-lg font-bold">Performance insights and social posts</h3>
+                    <p class="text-gray-500">Player and team insights, plus a ready-to-publish post for every match.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-white scroll-mt-20">
+        <div class="max-w-screen-xl px-4 py-16 mx-auto lg:py-20">
+            <div class="max-w-screen-sm mx-auto text-center">
+                <h2 class="mb-4 text-3xl font-extrabold tracking-tight md:text-4xl">Running a league?</h2>
+                <p class="mb-8 text-gray-500 md:text-lg">Prolig is in closed beta. If you organise a league or tournament and want to try it, write to us.</p>
+                <a href="mailto:furkan@ofsenterprise.com" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-emerald-700 rounded-lg hover:bg-emerald-800 focus:ring-4 focus:ring-emerald-300">furkan@ofsenterprise.com</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-gray-100">
+        <div class="max-w-screen-xl p-4 py-10 mx-auto lg:py-14">
+            <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+                <div class="col-span-2">
+                    <a href="/" class="flex items-center mb-4">
+                        <img src="images/ofs-logo.png" class="w-8 h-8 mr-3" width="32" height="32" alt="OFS logo">
+                        <span class="text-lg font-bold tracking-tight">OFS</span>
+                    </a>
+                    <p class="max-w-xs text-sm text-gray-500">Prolig is a product by OFS Dış Ticaret Ltd. Şti.</p>
+                </div>
+                <div>
+                    <h3 class="mb-4 text-sm font-semibold text-gray-900 uppercase">Products</h3>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="prolig.html" class="hover:text-gray-900">Prolig</a></li>
+                        <li><a href="baykul.html" class="hover:text-gray-900">Baykul Broadcaster</a></li>
+                        <li><a href="/" class="hover:text-gray-900">OFS company site</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-4 text-sm font-semibold text-gray-900 uppercase">Follow</h3>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="https://www.youtube.com/@ProligKocaeli" target="_blank" rel="noopener" class="hover:text-gray-900">YouTube</a></li>
+                        <li><a href="https://www.instagram.com/proligkocaeli/" target="_blank" rel="noopener" class="hover:text-gray-900">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-8 border-gray-200">
+            <p class="text-sm text-center text-gray-500">© <script>document.write(new Date().getFullYear())</script> OFS Dış Ticaret Ltd. Şti. · Istanbul, Türkiye</p>
+        </div>
+    </footer>
+
+    <script>
+      (function () {
+        var b = document.getElementById('menu-toggle'), m = document.getElementById('main-menu');
+        b.addEventListener('click', function () { var open = m.classList.toggle('hidden') === false; b.setAttribute('aria-expanded', open); });
+        m.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { m.classList.add('hidden'); }); });
+      })();
+    </script>
+</body>
+</html>
