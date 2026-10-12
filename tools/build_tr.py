@@ -44,7 +44,7 @@ TR = {
     "Closed beta": "Kapalı beta",
     "Live in Kocaeli": "Kocaeli'de yayında",
     "View product": "Ürünü incele",
-    "Works with": "Birlikte çalışır",
+    "Works with": "Birlikte çalıştığı ürün",
     "Log it once": "Bir kez girin",
     "It reaches the stream": "Yayına yansır",
     "The league updates itself": "Lig kendini günceller",
@@ -66,33 +66,33 @@ TR = {
         "Kendi yazılım ürünlerini tasarlayan, geliştiren ve işleten İstanbul merkezli bir şirket.",
     "Istanbul · Founded 2022": "İstanbul · Kuruluş 2022",
     "Software products, built in Istanbul.": "İstanbul'da geliştirilen yazılım ürünleri.",
-    "OFS designs, builds and operates its own software products — from the first idea to real users in the field.":
-        "OFS, kendi yazılım ürünlerini ilk fikirden sahadaki gerçek kullanıcılara kadar kendisi tasarlar, geliştirir ve işletir.",
+    "OFS designs, builds and operates its own software products, from the first idea to real users in the field.":
+        "OFS kendi yazılım ürünlerini tasarlar, geliştirir ve işletir. İlk fikirden sahadaki kullanıcıya kadar bütün süreci kendisi yürütür.",
     "Explore our products": "Ürünlerimizi inceleyin",
     "About the company": "Şirket hakkında",
-    "— streaming a league match in Kocaeli": "— Kocaeli'de bir lig maçını yayınlıyor",
-    "Company founded": "Şirketin kuruluşu",
+    "streaming a league match in Kocaeli": "Kocaeli'de bir lig maçını yayınlıyor",
+    "Company founded": "Kuruluş yılı",
     "Headquarters": "Merkez",
     "Videos streamed with our software": "Yazılımımızla yayınlanan video",
-    "Products live with real users": "Ürünler gerçek kullanıcılarla yayında",
+    "First products in use": "İlk ürünler kullanıma girdi",
     "How we build": "Nasıl geliştiriyoruz",
     "We take an everyday problem, build a working product for it, and keep improving it with the people who use it.":
-        "Gündelik bir sorunu ele alır, ona çalışan bir ürün geliştirir ve ürünü kullananlarla birlikte iyileştirmeye devam ederiz.",
-    "Built in-house": "Kendi bünyemizde",
-    "Design, development and operations stay under one roof, so every product is something we fully understand and can support.":
-        "Tasarım, geliştirme ve işletme tek çatı altında kalır; böylece her ürünü bütünüyle tanır ve destekleyebiliriz.",
-    "Shaped with real users": "Gerçek kullanıcılarla şekillenir",
+        "Gündelik bir sorunu alır, onu çözen bir ürün geliştirir ve ürünü kullananlarla birlikte iyileştirmeyi sürdürürüz.",
+    "Built in-house": "Kendimiz geliştiriyoruz",
+    "We design, build and run every product ourselves, so we know it well and can support it.":
+        "Tasarımı, geliştirmeyi ve işletmeyi kendimiz yapıyoruz. Bu yüzden her ürünümüzü iyi tanıyor ve arkasında durabiliyoruz.",
+    "Shaped with real users": "Kullanıcıyla birlikte gelişir",
     "Products go into the field early. Feedback from the first users decides what we build next.":
-        "Ürünler sahaya erken çıkar. Bir sonraki adımı ilk kullanıcılardan gelen geri bildirim belirler.",
+        "Ürünlerimizi sahaya erken çıkarırız. Bir sonraki adımı ilk kullanıcıların geri bildirimi belirler.",
     "AI-assisted development": "Yapay zekâ destekli geliştirme",
     "We build with modern AI tools, which lets a small company move from idea to working product quickly.":
-        "Modern yapay zekâ araçlarıyla geliştiriyoruz; bu, küçük bir şirketin fikirden çalışan ürüne hızla ilerlemesini sağlıyor.",
+        "Geliştirme sürecinde yapay zekâ araçlarından yararlanıyoruz. Bu sayede küçük bir şirket olarak fikirden çalışan ürüne hızlı geçebiliyoruz.",
     "What we build": "Neler geliştiriyoruz",
-    "Two connected products for amateur football. Each works on its own, and together they keep the stream and the league in sync.":
-        "Amatör futbol için birbirine bağlı iki ürün. Her biri tek başına çalışır; birlikte kullanıldığında yayın ve lig hep eşzamanlı kalır.",
+    "Two connected products for amateur football. One runs the league and the other streams the matches. Both use the same match data.":
+        "Amatör futbol için birbirine bağlı iki ürün. Biri ligi yönetir, diğeri maçları yayınlar. İkisi de aynı maç verisini kullanır.",
     "League management": "Lig yönetimi",
-    "A league management app for amateur football: from lineups and live scoring to standings, statistics and season reports.":
-        "Amatör futbol için lig yönetim uygulaması: kadrolardan canlı skora, puan tablosundan istatistiklere ve sezon raporlarına.",
+    "A league management app for amateur football. It covers lineups, live scoring, standings, statistics and season reports.":
+        "Amatör futbol için lig yönetim uygulaması. Kadroları, canlı skoru, puan tablosunu, istatistikleri ve sezon raporlarını tek yerde toplar.",
     "Live scoring, standings and player stats": "Canlı skor, puan tablosu ve oyuncu istatistikleri",
     "PDF match and season reports": "PDF maç ve sezon raporları",
     "Ready-to-post social graphics": "Paylaşıma hazır sosyal medya görselleri",
@@ -106,14 +106,14 @@ TR = {
     "OFS Dış Ticaret Ltd. Şti. is an Istanbul-based company founded in 2022. Today our focus is building software products.":
         "OFS Dış Ticaret Ltd. Şti., 2022'de kurulmuş İstanbul merkezli bir şirkettir. Bugün odağımız yazılım ürünleri geliştirmektir.",
     "We are a small, founder-led company. That keeps us close to our users and lets us ship improvements quickly.":
-        "Kurucusu tarafından yönetilen küçük bir şirketiz. Bu sayede kullanıcılarımıza yakın duruyor ve iyileştirmeleri hızla yayına alabiliyoruz.",
+        "Kurucusunun yönettiği küçük bir şirketiz. Bu sayede kullanıcılarımıza yakınız ve iyileştirmeleri hızlı yayınlayabiliyoruz.",
     "Legal name": "Ticaret unvanı",
     "Founded": "Kuruluş",
     "October 2022": "Ekim 2022",
     "Founder": "Kurucu",
     "Email": "E-posta",
-    "Questions about OFS or one of our products? We would be glad to hear from you.":
-        "OFS ya da ürünlerimizle ilgili bir sorunuz mu var? Sizden haber almaktan memnuniyet duyarız.",
+    "Have a question about OFS or one of our products? Write to us.":
+        "OFS ya da ürünlerimizle ilgili bir sorunuz mu var? Bize yazın.",
     "A phone on a tripod streaming an amateur football match with Baykul Broadcaster":
         "Tripod üzerindeki bir telefon, Baykul Broadcaster ile amatör bir futbol maçını yayınlıyor",
     "Prolig live scoring screen": "Prolig canlı skor ekranı",
@@ -132,17 +132,17 @@ TR = {
     "See the features": "Özellikleri görün",
     "View screens": "Ekranları görün",
     "4 months": "4 ay",
-    "In use by a local league": "Yerel bir ligde kullanımda",
-    "Instagram posts from app data": "Uygulama verisiyle Instagram gönderisi",
-    "7-a-side": "7'ye 7",
+    "In use by a local league": "Yerel bir ligde kullanılıyor",
+    "Instagram posts from app data": "Uygulamayla hazırlanan Instagram gönderisi",
+    "7-a-side": "7 kişilik",
     "Built for amateur leagues": "Amatör ligler için tasarlandı",
     "Flutter app": "Flutter uygulaması",
-    "Everything a league organiser needs": "Bir lig organizatörünün ihtiyacı olan her şey",
+    "What Prolig does": "Prolig neler yapar",
     "Enter a match event once and the whole league stays up to date.":
-        "Maç olayını bir kez girin; bütün lig güncel kalsın.",
+        "Maç olayını bir kez girin, bütün lig güncel kalsın.",
     "Match day": "Maç günü",
     "Teams, squads and 7-a-side lineups with formation view":
-        "Takımlar, kadrolar ve diziliş görünümüyle 7 kişilik ilk yediler",
+        "Takımlar, oyuncu kadroları ve 7 kişilik saha dizilişi",
     "Live scoring from an operator screen: goals, cards, substitutions":
         "Operatör ekranından canlı skor: gol, kart, oyuncu değişikliği",
     "Match clock, half-time and full-time control": "Maç saati, devre arası ve maç sonu kontrolü",
@@ -154,13 +154,13 @@ TR = {
     "Ready-to-post social graphics: results, fixtures, tables":
         "Paylaşıma hazır sosyal medya görselleri: sonuçlar, fikstür, puan tablosu",
     "Monthly bonus-point system for teams": "Takımlar için aylık bonus puan sistemi",
-    "Our streaming app sends matches to YouTube Live. Events logged on its camera screen are written straight into Prolig, so the stream and the league table always agree.":
-        "Yayın uygulamamız maçları YouTube Live'a gönderir. Kamera ekranından girilen olaylar doğrudan Prolig'e yazılır; böylece yayın ile puan tablosu her zaman uyumludur.",
+    "Our streaming app sends matches to YouTube Live. Events logged on its camera screen are written straight into Prolig, so the stream and the league table show the same result.":
+        "Yayın uygulamamız maçları YouTube Live'a gönderir. Kamera ekranından girilen olaylar doğrudan Prolig'e yazılır. Böylece yayındaki skor ile puan tablosu birbirini tutar.",
     "View Baykul Broadcaster": "Baykul Broadcaster'ı incele",
     "Inside the app": "Uygulamanın içinden",
-    "Real screens from real matches": "Gerçek maçlardan gerçek ekranlar",
-    "Unedited screenshots from the Kocaeli league. Player names are blurred for privacy.":
-        "Kocaeli ligine ait, üzerinde oynanmamış ekran görüntüleri. Oyuncu adları gizlilik için bulanıklaştırılmıştır.",
+    "Screenshots from the Kocaeli league": "Kocaeli liginden ekran görüntüleri",
+    "Taken during league matches. Player names are blurred for privacy.":
+        "Lig maçları sırasında alındı. Oyuncu adları gizlilik nedeniyle bulanıklaştırıldı.",
     "Live scoring": "Canlı skor",
     "Score, clock and one-tap goals, cards and substitutions.":
         "Skor, süre ve tek dokunuşla gol, kart ve oyuncu değişikliği.",
@@ -168,22 +168,22 @@ TR = {
     "The table updates the moment a result is logged.": "Sonuç girildiği anda tablo güncellenir.",
     "Social graphics": "Sosyal medya görselleri",
     "Daily results, fixtures and tables, generated ready to post.":
-        "Günün sonuçları, fikstür ve puan tablosu paylaşıma hazır üretilir.",
-    "Built with Claude. Next: powered by it.": "Claude ile geliştirildi. Sırada: Claude ile çalışması.",
-    "Prolig was built with Anthropic's Claude. The next step is bringing Claude into the product itself.":
-        "Prolig, Anthropic'in Claude'u ile geliştirildi. Sıradaki adım, Claude'u ürünün içine yerleştirmek.",
-    "League app shipped to closed beta": "Lig uygulaması kapalı betaya çıktı",
+        "Günün sonuçları, fikstür ve puan tablosu görselleri paylaşıma hazır gelir.",
+    "What comes next": "Sırada ne var",
+    "Prolig was built with Anthropic's Claude. The next step is to use Claude inside the product, starting with match reports.":
+        "Prolig, Anthropic'in Claude'u ile geliştirildi. Sıradaki adım, maç raporlarından başlayarak Claude'u ürünün içinde kullanmak.",
+    "League app shipped to closed beta": "Lig uygulaması kapalı beta olarak yayınlandı",
     "Scoring, standings, stats, reports and social graphics.":
         "Skor, puan tablosu, istatistikler, raporlar ve sosyal medya görselleri.",
     "Closed beta with a league in Kocaeli": "Kocaeli'de bir ligle kapalı beta",
-    "A local league runs its matches on Prolig and feeds back what to improve.":
-        "Yerel bir lig maçlarını Prolig üzerinden yürütüyor ve nelerin iyileştirilmesi gerektiğini bildiriyor.",
+    "A local league runs its matches on Prolig and tells us what to improve.":
+        "Yerel bir lig maçlarını Prolig üzerinden yürütüyor ve nelerin iyileştirilmesi gerektiğini bize bildiriyor.",
     "AI match summaries and commentary": "Yapay zekâ ile maç özetleri ve yorumlar",
-    "Automatic, Turkish-first match reports written from the live event data.":
-        "Canlı maç verisinden otomatik yazılan, öncelikle Türkçe maç raporları.",
-    "Performance insights and social posts": "Performans analizleri ve sosyal medya gönderileri",
-    "Player and team insights, plus a ready-to-publish post for every match.":
-        "Oyuncu ve takım analizleri, ayrıca her maç için yayına hazır bir gönderi.",
+    "Match reports in Turkish, written automatically from the events logged during the match.":
+        "Maç sırasında girilen olaylardan otomatik yazılan Türkçe maç raporları.",
+    "Performance analysis and social posts": "Performans analizleri ve sosyal medya gönderileri",
+    "Player and team statistics explained in plain language, and a draft social post for every match.":
+        "Oyuncu ve takım istatistiklerinin sade bir dille yorumu ve her maç için hazır bir gönderi taslağı.",
     "Running a league?": "Bir lig mi yönetiyorsunuz?",
     "Prolig is in closed beta. If you organise a league or tournament and want to try it, write to us.":
         "Prolig kapalı beta aşamasında. Bir lig ya da turnuva düzenliyor ve denemek istiyorsanız bize yazın.",
@@ -205,40 +205,40 @@ TR = {
     "Watch a real match": "Gerçek bir maç izleyin",
     "Streaming a league match in Kocaeli": "Kocaeli'de bir lig maçı yayınlanıyor",
     "Videos streamed": "Yayınlanan video",
-    "Live with a local league": "Yerel bir ligle yayında",
+    "Live with a local league": "Yerel bir ligde kullanılıyor",
     "YouTube subscribers": "YouTube abonesi",
-    "Native app": "Yerel (native) uygulama",
-    "A camera and a scoring console in one": "Kamera ve skor konsolu tek uygulamada",
+    "Native app": "Native uygulama",
+    "A camera and a scoring console in one": "Kamera ve skor paneli tek uygulamada",
     "One person with one phone can film the match and keep the score at the same time.":
         "Tek kişi, tek telefonla hem maçı çekebilir hem de skoru tutabilir.",
     "Broadcast": "Yayın",
-    "Direct YouTube Live broadcast setup from the app": "Uygulamadan doğrudan YouTube Live yayını kurulumu",
+    "Direct YouTube Live broadcast setup from the app": "YouTube Live yayını doğrudan uygulamadan başlatılır",
     "Real-time score and lineup overlays on the stream": "Yayında gerçek zamanlı skor ve kadro grafikleri",
-    "Stream health monitoring with automatic retry": "Yayın sağlığı takibi ve otomatik yeniden deneme",
+    "Stream health monitoring with automatic retry": "Yayın bağlantısı izlenir, koparsa otomatik yeniden denenir",
     "Runs on a standard Android phone and a tripod": "Standart bir Android telefon ve tripodla çalışır",
     "Match logging": "Maç verisi girişi",
-    "Log goals, cards and substitutions mid-stream": "Yayın sırasında gol, kart ve değişiklik girin",
-    ", without leaving the camera view": "; kamera görüntüsünden çıkmadan",
-    "Every event syncs instantly": "Her olay anında eşitlenir",
-    "to Prolig: score, standings, player stats": "— Prolig'e: skor, puan tablosu, oyuncu istatistikleri",
+    "Log goals, cards and substitutions mid-stream": "Gol, kart ve oyuncu değişikliği yayın sırasında girilir",
+    ", without leaving the camera view": ", kamera görüntüsünden çıkmak gerekmez",
+    "Every event syncs instantly": "Girilen her olay anında Prolig'e işlenir",
+    "to Prolig: score, standings, player stats": ": skor, puan tablosu ve oyuncu istatistikleri güncellenir",
     "Start the match, half-time and second half from the same panel":
         "Maçı, devre arasını ve ikinci yarıyı aynı panelden başlatın",
     "Overlays driven by the same data as the league app":
-        "Grafikler lig uygulamasıyla aynı veriden beslenir",
-    "Real match, real stream": "Gerçek maç, gerçek yayın",
-    "Already on air": "Zaten yayında",
+        "Yayındaki grafikler lig uygulamasıyla aynı veriyi kullanır",
+    "From the league channel": "Ligin kanalından",
+    "Already on air": "Yayınlar sürüyor",
     "A local league in Kocaeli streams its matches with Baykul Broadcaster and publishes them on the league's YouTube channel.":
         "Kocaeli'de yerel bir lig, maçlarını Baykul Broadcaster ile yayınlıyor ve ligin YouTube kanalında paylaşıyor.",
     "YouTube channel ↗": "YouTube kanalı ↗",
     "Instagram ↗": "Instagram ↗",
     "Prolig Kocaeli · Full match on YouTube": "Prolig Kocaeli · Maçın tamamı YouTube'da",
     "Our league management app. Everything logged during the broadcast lands in Prolig: standings, top scorers, match reports and social graphics update on their own.":
-        "Lig yönetim uygulamamız. Yayın sırasında girilen her şey Prolig'e düşer: puan tablosu, gol krallığı, maç raporları ve sosyal medya görselleri kendiliğinden güncellenir.",
+        "Lig yönetim uygulamamız. Yayın sırasında girilen her olay Prolig'e işlenir. Puan tablosu, gol krallığı, maç raporları ve sosyal medya görselleri kendiliğinden güncellenir.",
     "View Prolig": "Prolig'i incele",
     "On the touchline": "Saha kenarında",
-    "No production crew needed": "Yayın ekibine gerek yok",
+    "A phone and a tripod": "Bir telefon ve bir tripod",
     "A phone on a tripod is the whole setup. The app shows the live picture with the score overlay, and the match panel sits on the same screen.":
-        "Bütün kurulum, tripod üzerindeki bir telefondan ibaret. Uygulama canlı görüntüyü skor grafiğiyle gösterir; maç paneli de aynı ekrandadır.",
+        "Bütün kurulum, tripod üzerindeki bir telefondan ibaret. Uygulama canlı görüntüyü skor grafiğiyle gösterir. Maç paneli de aynı ekrandadır.",
     "This photo was taken during a league match in Kocaeli.": "Bu fotoğraf Kocaeli'de bir lig maçı sırasında çekildi.",
     "Want to stream your league?": "Liginizi yayınlamak ister misiniz?",
     "Baykul Broadcaster is in closed beta. If you organise a league or tournament and want to try it, write to us.":
