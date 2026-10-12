@@ -17,6 +17,7 @@ KEEP = {
     "OFS", "Prolig", "Baykul Broadcaster", "OFS Dış Ticaret Ltd. Şti.", "Furkan Solak",
     "furkan@ofsenterprise.com", "YouTube", "Instagram", "Android", "Bonzalex vs Red Bull FC",
     "EN", "TR", "|", "/", "2022", "500+", "2026", "150+", "300+", "1", "2", "3",
+    "D-U-N-S", "75-114-5219",
 }
 
 TR = {
