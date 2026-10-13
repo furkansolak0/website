@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OFS — Software products, built in Istanbul</title>
-    <meta name="description" content="OFS Dış Ticaret Ltd. Şti. is an Istanbul-based company that designs, builds and operates its own software products.">
+    <title>OFS — Yapım aşamasında</title>
+    <meta name="description" content="OFS Dış Ticaret Ltd. Şti. web sitesi yenileniyor. Kısa süre içinde yeniden yayında olacağız.">
+    <meta name="robots" content="noindex">
 
     <!-- www -> apex (path'i kaybetmeden) -->
     <script>
@@ -13,249 +14,94 @@
       }
     </script>
 
-    <meta property="og:title" content="OFS — Software products, built in Istanbul">
-    <meta property="og:description" content="An Istanbul-based company that designs, builds and operates its own software products.">
+    <meta property="og:title" content="OFS — Yapım aşamasında">
+    <meta property="og:description" content="Web sitemiz yenileniyor. Kısa süre içinde yeniden yayında olacağız.">
     <meta property="og:url" content="https://ofsenterprise.com/">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://ofsenterprise.com/images/app/streaming-pitch.jpg">
     <link rel="icon" type="image/png" href="images/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="alternate" hreflang="tr" href="https://ofsenterprise.com/tr/">
-    <link rel="alternate" hreflang="en" href="https://ofsenterprise.com/">
-    <link href="assets/site.css" rel="stylesheet">
-</head>
-<body class="text-gray-900 antialiased bg-white">
 
-    <header class="fixed z-30 w-full bg-white/90 backdrop-blur border-b border-gray-100">
-        <nav class="py-3">
-            <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
-                <a href="/" class="flex items-center">
-                    <img src="images/ofs-logo.png" class="mr-3 w-9 h-9" width="36" height="36" alt="OFS logo">
-                    <span class="self-center text-xl font-bold tracking-tight whitespace-nowrap">OFS</span>
-                </a>
-                <div class="flex items-center lg:order-2">
-                    <div class="flex items-center mr-3 text-sm font-semibold" data-lang-switch><span class="text-gray-900">EN</span><span class="mx-1.5 text-gray-300">|</span><a href="tr/" hreflang="tr" lang="tr" class="text-gray-400 hover:text-emerald-700" title="Türkçe">TR</a></div>
-                    <a href="#contact" class="hidden sm:inline-block text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:ring-emerald-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 focus:outline-none">Get in touch</a>
-                    <button id="menu-toggle" type="button" class="inline-flex items-center p-2 ml-2 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="main-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                    </button>
-                </div>
-                <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="main-menu">
-                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                        <li><a href="#approach" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0">Approach</a></li>
-                        <li><a href="#products" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0">Products</a></li>
-                        <li><a href="#company" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0">Company</a></li>
-                        <li><a href="#contact" class="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <style>
+      :root { --ink: #111827; --muted: #6b7280; --line: #e5e7eb; --accent: #047857; --accent-soft: #ecfdf5; }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { height: 100%; }
+      body {
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: var(--ink); background: #fff; -webkit-font-smoothing: antialiased;
+        display: flex; flex-direction: column; min-height: 100%;
+        background-image:
+          radial-gradient(ellipse 60% 45% at 50% -10%, rgba(4, 120, 87, .10), transparent 70%),
+          linear-gradient(var(--line) 1px, transparent 1px),
+          linear-gradient(90deg, var(--line) 1px, transparent 1px);
+        background-size: auto, 56px 56px, 56px 56px;
+        background-position: center top, center top, center top;
+      }
+      body::before { /* ızgarayı kenarlara doğru soldur */
+        content: ""; position: fixed; inset: 0; pointer-events: none;
+        background: radial-gradient(ellipse 75% 65% at 50% 35%, rgba(255,255,255,.55) 0%, #fff 78%);
+      }
+      header, main, footer { position: relative; z-index: 1; width: 100%; max-width: 720px; margin: 0 auto; padding: 0 24px; }
+      header { padding-top: 32px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+      header img { width: 40px; height: 40px; }
+      header span { font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
+
+      main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-top: 48px; padding-bottom: 48px; }
+      .pill {
+        display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; margin-bottom: 28px;
+        font-size: 13px; font-weight: 600; color: #065f46; background: var(--accent-soft);
+        border: 1px solid #d1fae5; border-radius: 999px;
+      }
+      .dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+      .dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--accent); animation: ping 1.8s cubic-bezier(0, 0, .2, 1) infinite; }
+      @keyframes ping { 75%, 100% { transform: scale(2.6); opacity: 0; } }
+
+      h1 { font-size: clamp(34px, 6.2vw, 56px); line-height: 1.08; font-weight: 800; letter-spacing: -.03em; margin-bottom: 20px; }
+      .lead { font-size: clamp(17px, 2.2vw, 20px); line-height: 1.6; color: var(--muted); max-width: 520px; }
+      .en { margin-top: 14px; font-size: 15px; line-height: 1.6; color: #9ca3af; max-width: 520px; }
+
+      .bar { width: min(280px, 70%); height: 4px; margin: 40px 0; border-radius: 999px; background: var(--line); overflow: hidden; }
+      .bar i { display: block; width: 40%; height: 100%; border-radius: 999px; background: var(--accent); animation: slide 2.4s ease-in-out infinite; }
+      @keyframes slide { 0% { transform: translateX(-110%); } 100% { transform: translateX(260%); } }
+
+      .btn {
+        display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; font-size: 15px; font-weight: 600;
+        color: #fff; background: var(--accent); border-radius: 10px; text-decoration: none; transition: background .2s, transform .2s;
+      }
+      .btn:hover { background: #065f46; transform: translateY(-1px); }
+      .btn svg { width: 18px; height: 18px; }
+
+      footer { padding-top: 20px; padding-bottom: 28px; text-align: center; font-size: 13px; color: #9ca3af; border-top: 1px solid var(--line); max-width: none; background: rgba(255,255,255,.7); }
+
+      @media (prefers-reduced-motion: reduce) { .dot::after, .bar i { animation: none; } .bar i { width: 60%; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="images/ofs-logo.png" width="40" height="40" alt="OFS logosu">
+        <span>OFS</span>
     </header>
 
-    <!-- Hero -->
-    <section class="bg-white">
-        <div class="grid max-w-screen-xl px-4 pt-28 pb-12 mx-auto lg:gap-12 lg:py-20 lg:grid-cols-12 lg:pt-36">
-            <div class="mr-auto place-self-center lg:col-span-6">
-                <span class="inline-flex items-center px-3 py-1 mb-6 text-sm font-medium text-emerald-800 bg-emerald-50 rounded-full ring-1 ring-emerald-100">
-                    <span class="w-2 h-2 mr-2 bg-emerald-600 rounded-full"></span>Istanbul · Founded 2022
-                </span>
-                <h1 class="max-w-2xl mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl xl:text-6xl">Software products, built&nbsp;in&nbsp;Istanbul.</h1>
-                <p class="max-w-xl mb-8 text-gray-500 md:text-lg lg:text-xl">OFS designs, builds and operates its own software products, from the first idea to real users in the field.</p>
-                <div class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
-                    <a href="#products" class="inline-flex items-center justify-center w-full px-5 py-3 text-base font-medium text-center text-white bg-emerald-700 rounded-lg sm:w-auto hover:bg-emerald-800 focus:ring-4 focus:ring-emerald-300">
-                        Explore our products
-                        <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </a>
-                    <a href="#company" class="inline-flex items-center justify-center w-full px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-50 focus:ring-4 focus:ring-gray-100">About the company</a>
-                </div>
-            </div>
-            <div class="mt-12 lg:mt-0 lg:col-span-6">
-                <figure class="relative">
-                    <img class="object-cover w-full shadow-xl aspect-[4/3] rounded-2xl ring-1 ring-gray-900/5" src="images/app/streaming-pitch.jpg" alt="A phone on a tripod streaming an amateur football match with Baykul Broadcaster">
-                    <figcaption class="absolute flex items-center px-4 py-3 bg-white shadow-lg left-4 bottom-4 rounded-xl ring-1 ring-gray-900/5">
-                        <span class="relative flex w-2.5 h-2.5 mr-3"><span class="absolute inline-flex w-full h-full bg-red-400 rounded-full opacity-75 animate-ping"></span><span class="relative inline-flex w-2.5 h-2.5 bg-red-500 rounded-full"></span></span>
-                        <span class="text-sm"><span class="font-semibold">Baykul Broadcaster</span> <span class="text-gray-500">streaming a league match in Kocaeli</span></span>
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
-    </section>
+    <main>
+        <div class="pill"><span class="dot"></span>Yapım aşamasında</div>
+        <h1>Web sitemiz yenileniyor.</h1>
+        <p class="lead">Yeni sitemiz üzerinde çalışıyoruz. Kısa süre içinde yeniden yayında olacağız.</p>
+        <p class="en" lang="en">Our website is being rebuilt. We will be back online soon.</p>
 
-    <!-- Facts -->
-    <section class="bg-gray-50 border-y border-gray-100">
-        <div class="max-w-screen-xl px-4 py-10 mx-auto lg:py-12">
-            <dl class="grid grid-cols-2 gap-8 text-center lg:grid-cols-4">
-                <div><dt class="text-3xl font-extrabold tracking-tight md:text-4xl">2022</dt><dd class="mt-1 text-gray-500">Company founded</dd></div>
-                <div><dt class="text-3xl font-extrabold tracking-tight md:text-4xl">Istanbul</dt><dd class="mt-1 text-gray-500">Headquarters</dd></div>
-                <div><dt class="text-3xl font-extrabold tracking-tight md:text-4xl">500+</dt><dd class="mt-1 text-gray-500">Videos streamed with our software</dd></div>
-                <div><dt class="text-3xl font-extrabold tracking-tight md:text-4xl">2026</dt><dd class="mt-1 text-gray-500">First products in use</dd></div>
-            </dl>
-        </div>
-    </section>
+        <div class="bar" aria-hidden="true"><i></i></div>
 
-    <!-- Approach -->
-    <section id="approach" class="bg-white scroll-mt-20">
-        <div class="max-w-screen-xl px-4 py-16 mx-auto lg:py-24">
-            <div class="max-w-screen-md mb-10 lg:mb-14">
-                <p class="mb-3 text-sm font-semibold tracking-wide text-emerald-700 uppercase">Approach</p>
-                <h2 class="mb-4 text-3xl font-extrabold tracking-tight md:text-4xl">How we build</h2>
-                <p class="text-gray-500 sm:text-xl">We take an everyday problem, build a working product for it, and keep improving it with the people who use it.</p>
-            </div>
-            <div class="grid gap-8 md:grid-cols-3">
-                <div class="p-6 border border-gray-200 rounded-2xl">
-                    <div class="flex items-center justify-center w-11 h-11 mb-5 rounded-lg bg-emerald-50 text-emerald-700">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold">Built in-house</h3>
-                    <p class="text-gray-500">We design, build and run every product ourselves, so we know it well and can support it.</p>
-                </div>
-                <div class="p-6 border border-gray-200 rounded-2xl">
-                    <div class="flex items-center justify-center w-11 h-11 mb-5 rounded-lg bg-emerald-50 text-emerald-700">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold">Shaped with real users</h3>
-                    <p class="text-gray-500">Products go into the field early. Feedback from the first users decides what we build next.</p>
-                </div>
-                <div class="p-6 border border-gray-200 rounded-2xl">
-                    <div class="flex items-center justify-center w-11 h-11 mb-5 rounded-lg bg-emerald-50 text-emerald-700">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/></svg>
-                    </div>
-                    <h3 class="mb-2 text-xl font-bold">AI-assisted development</h3>
-                    <p class="text-gray-500">We build with modern AI tools, which lets a small company move from idea to working product quickly.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <a class="btn" href="mailto:furkan@ofsenterprise.com">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            furkan@ofsenterprise.com
+        </a>
+    </main>
 
-    <!-- Products -->
-    <section id="products" class="bg-gray-50 scroll-mt-20">
-        <div class="max-w-screen-xl px-4 py-16 mx-auto lg:py-24">
-            <div class="max-w-screen-md mb-10 lg:mb-14">
-                <p class="mb-3 text-sm font-semibold tracking-wide text-emerald-700 uppercase">Products</p>
-                <h2 class="mb-4 text-3xl font-extrabold tracking-tight md:text-4xl">What we build</h2>
-                <p class="text-gray-500 sm:text-xl">Two connected products for amateur football. One runs the league and the other streams the matches. Both use the same match data.</p>
-            </div>
-
-            <div class="grid gap-8 lg:grid-cols-2">
-                <a href="prolig.html" class="flex flex-col overflow-hidden transition bg-white border border-gray-200 shadow-sm group rounded-2xl hover:shadow-lg hover:border-emerald-200">
-                    <div class="flex items-end justify-center h-64 px-8 pt-8 overflow-hidden bg-gradient-to-br from-emerald-700 to-emerald-900">
-                        <img class="w-40 -mb-28 shadow-2xl rounded-[1.4rem] ring-4 ring-gray-900" src="images/app/live-scoring.jpg" alt="Prolig live scoring screen" loading="lazy">
-                        <img class="w-40 ml-5 -mb-40 shadow-2xl rounded-[1.4rem] ring-4 ring-gray-900" src="images/app/standings.jpg" alt="Prolig standings screen" loading="lazy">
-                    </div>
-                    <div class="flex flex-col flex-1 p-8">
-                        <div class="flex flex-wrap items-center gap-2 mb-4">
-                            <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-red-700 bg-red-50 rounded-full ring-1 ring-red-100"><span class="w-1.5 h-1.5 mr-1.5 bg-red-500 rounded-full"></span>Live in Kocaeli</span>
-                            <span class="px-2.5 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full">Closed beta</span>
-                            <span class="px-2.5 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full">League management</span>
-                        </div>
-                        <h3 class="mb-3 text-2xl font-extrabold tracking-tight md:text-3xl">Prolig</h3>
-                        <p class="mb-6 text-gray-500">A league management app for amateur football. It covers lineups, live scoring, standings, statistics and season reports.</p>
-                        <ul class="mb-8 space-y-3 text-gray-700">
-                            <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Live scoring, standings and player stats</span></li>
-                            <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>PDF match and season reports</span></li>
-                            <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Ready-to-post social graphics</span></li>
-                        </ul>
-                        <span class="inline-flex items-center mt-auto font-semibold text-emerald-700 group-hover:text-emerald-800">View product<svg class="w-5 h-5 ml-1 transition group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></span>
-                    </div>
-                </a>
-                <a href="baykul.html" class="flex flex-col overflow-hidden transition bg-white border border-gray-200 shadow-sm group rounded-2xl hover:shadow-lg hover:border-emerald-200">
-                    <div class="h-64 overflow-hidden bg-gray-900">
-                        <img class="object-cover w-full h-full" style="object-position:center 38%" src="images/app/streaming-pitch.jpg" alt="Baykul Broadcaster streaming a match from a phone on a tripod" loading="lazy">
-                    </div>
-                    <div class="flex flex-col flex-1 p-8">
-                        <div class="flex flex-wrap items-center gap-2 mb-4">
-                            <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-red-700 bg-red-50 rounded-full ring-1 ring-red-100"><span class="w-1.5 h-1.5 mr-1.5 bg-red-500 rounded-full"></span>Live in Kocaeli</span>
-                            <span class="px-2.5 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full">Closed beta</span>
-                            <span class="px-2.5 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full">Live streaming</span>
-                        </div>
-                        <h3 class="mb-3 text-2xl font-extrabold tracking-tight md:text-3xl">Baykul Broadcaster</h3>
-                        <p class="mb-6 text-gray-500">Turns a phone into a broadcast camera. Streams matches to YouTube Live with real-time score overlays.</p>
-                        <ul class="mb-8 space-y-3 text-gray-700">
-                            <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>500+ videos streamed by a local league</span></li>
-                            <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Goals, cards and substitutions logged mid-stream</span></li>
-                            <li class="flex"><svg class="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><span>Syncs instantly with Prolig</span></li>
-                        </ul>
-                        <span class="inline-flex items-center mt-auto font-semibold text-emerald-700 group-hover:text-emerald-800">View product<svg class="w-5 h-5 ml-1 transition group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Company -->
-    <section id="company" class="bg-white scroll-mt-20">
-        <div class="items-start max-w-screen-xl gap-16 px-4 py-16 mx-auto lg:grid lg:grid-cols-2 lg:py-24">
-            <div>
-                <p class="mb-3 text-sm font-semibold tracking-wide text-emerald-700 uppercase">Company</p>
-                <h2 class="mb-4 text-3xl font-extrabold tracking-tight md:text-4xl">About OFS</h2>
-                <p class="mb-4 text-gray-500 md:text-lg">OFS Dış Ticaret Ltd. Şti. is an Istanbul-based company founded in 2022. Today our focus is building software products.</p>
-                <p class="text-gray-500 md:text-lg">We are a small, founder-led company. That keeps us close to our users and lets us ship improvements quickly.</p>
-            </div>
-            <div class="mt-10 lg:mt-0">
-                <dl class="overflow-hidden border border-gray-200 divide-y divide-gray-200 rounded-2xl">
-                    <div class="grid grid-cols-3 gap-4 px-6 py-4"><dt class="text-sm font-medium text-gray-500">Legal name</dt><dd class="col-span-2 font-medium">OFS Dış Ticaret Ltd. Şti.</dd></div>
-                    <div class="grid grid-cols-3 gap-4 px-6 py-4"><dt class="text-sm font-medium text-gray-500">Founded</dt><dd class="col-span-2 font-medium">October 2022</dd></div>
-                    <div class="grid grid-cols-3 gap-4 px-6 py-4"><dt class="text-sm font-medium text-gray-500">Headquarters</dt><dd class="col-span-2 font-medium">Istanbul, Türkiye</dd></div>
-                    <div class="grid grid-cols-3 gap-4 px-6 py-4"><dt class="text-sm font-medium text-gray-500">D-U-N-S</dt><dd class="col-span-2 font-medium">75-114-5219</dd></div>
-                    <div class="grid grid-cols-3 gap-4 px-6 py-4"><dt class="text-sm font-medium text-gray-500">Founder</dt><dd class="col-span-2 font-medium">Furkan Solak</dd></div>
-                    <div class="grid grid-cols-3 gap-4 px-6 py-4"><dt class="text-sm font-medium text-gray-500">Email</dt><dd class="col-span-2 font-medium"><a class="text-emerald-700 hover:underline" href="mailto:furkan@ofsenterprise.com">furkan@ofsenterprise.com</a></dd></div>
-                </dl>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section id="contact" class="bg-gray-50 scroll-mt-20">
-        <div class="max-w-screen-xl px-4 py-16 mx-auto lg:py-20">
-            <div class="max-w-screen-sm mx-auto text-center">
-                <h2 class="mb-4 text-3xl font-extrabold tracking-tight md:text-4xl">Get in touch</h2>
-                <p class="mb-8 text-gray-500 md:text-lg">Have a question about OFS or one of our products? Write to us.</p>
-                <a href="mailto:furkan@ofsenterprise.com" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-emerald-700 rounded-lg hover:bg-emerald-800 focus:ring-4 focus:ring-emerald-300">furkan@ofsenterprise.com</a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-white border-t border-gray-100">
-        <div class="max-w-screen-xl p-4 py-10 mx-auto lg:py-14">
-            <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
-                <div class="col-span-2">
-                    <a href="/" class="flex items-center mb-4">
-                        <img src="images/ofs-logo.png" class="w-8 h-8 mr-3" width="32" height="32" alt="OFS logo">
-                        <span class="text-lg font-bold tracking-tight">OFS</span>
-                    </a>
-                    <p class="max-w-xs text-sm text-gray-500">Software products, built in Istanbul.</p>
-                </div>
-                <div>
-                    <h3 class="mb-4 text-sm font-semibold text-gray-900 uppercase">Company</h3>
-                    <ul class="space-y-3 text-sm text-gray-500">
-                        <li><a href="#approach" class="hover:text-gray-900">Approach</a></li>
-                        <li><a href="#company" class="hover:text-gray-900">About</a></li>
-                        <li><a href="#contact" class="hover:text-gray-900">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="mb-4 text-sm font-semibold text-gray-900 uppercase">Products</h3>
-                    <ul class="space-y-3 text-sm text-gray-500">
-                        <li><a href="prolig.html" class="hover:text-gray-900">Prolig</a></li>
-                        <li><a href="baykul.html" class="hover:text-gray-900">Baykul Broadcaster</a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="my-8 border-gray-200">
-            <p class="text-sm text-center text-gray-500">© <script>document.write(new Date().getFullYear())</script> OFS Dış Ticaret Ltd. Şti. · Istanbul, Türkiye</p>
-        </div>
+    <footer>
+        © <script>document.write(new Date().getFullYear())</script> OFS Dış Ticaret Ltd. Şti. · İstanbul, Türkiye
     </footer>
 
-    <script>
-      (function () {
-        var b = document.getElementById('menu-toggle'), m = document.getElementById('main-menu');
-        b.addEventListener('click', function () { var open = m.classList.toggle('hidden') === false; b.setAttribute('aria-expanded', open); });
-        m.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { m.classList.add('hidden'); }); });
-      })();
-    </script>
 </body>
 </html>
